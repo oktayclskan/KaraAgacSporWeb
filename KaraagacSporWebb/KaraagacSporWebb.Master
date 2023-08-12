@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="KaraagacSporWebb.master.cs" Inherits="KaraagacSporWebb.KaraagacSporWebb" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Soccer &mdash; Website by Colorlib</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="Assets/fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="Assets/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="Assets/css/jquery-ui.css" />
+    <link rel="stylesheet" href="Assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="Assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="Assets/css/owl.theme.default.min.css" />
+
+    <link rel="stylesheet" href="Assets/css/jquery.fancybox.min.css" />
+
+    <link rel="stylesheet" href="Assets/css/bootstrap-datepicker.css" />
+
+    <link rel="stylesheet" href="Assets/fonts/flaticon/font/flaticon.css" />
+
+    <link rel="stylesheet" href="Assets/css/aos.css" />
+
+    <link rel="stylesheet" href="Assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,100;1,300&display=swap" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <div class="site-wrap">
+            <div class="site-mobile-menu site-navbar-target">
+                <div class="site-mobile-menu-header">
+                    <div class="site-mobile-menu-close">
+                        <span class="icon-close2 js-menu-toggle"></span>
+                    </div>
+                </div>
+                <div class="site-mobile-menu-body"></div>
+            </div>
+            <header class="site-navbar py-4" role="banner">
+                <div class="container">
+                    <div class="d-flex align-items-center">
+                        <div class="site-logo">
+                            <a href="index.aspx">
+                                <%--<h4 class="text-white" style="font-family: 'Tilt Prism', cursive;">Karaagaç Spor Kulübü</h4>--%>
+                                <img src="Assets/images/logoWeb.jpg" alt="Logo" width="75"/>
+                            </a>
+                        </div>
+                        <div class="ml-auto">
+                            <nav class="site-navigation position-relative text-right" role="navigation">
+                                <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                    <li class="active"><a href="index.aspx" class="nav-link">Anasayfa</a></li>
+                                    <li><a href="matches.aspx" class="nav-link">Maçlar</a></li>
+                                    <li><a href="players.aspx" class="nav-link">Oyuncular</a></li>
+                                    <li><a href="blog.aspx" class="nav-link">Blog</a></li>
+                                    <li><a href="blog.aspx" class="nav-link">Hakkımızda</a></li>
+                                    <li><a href="contact.aspx" class="nav-link">İletişim</a></li>
+                                </ul>
+                            </nav>
+                            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+                                class="icon-menu h3 text-white"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>News</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Club News</a></li>
+                                <li><a href="#">Media Center</a></li>
+                                <li><a href="#">Video</a></li>
+                                <li><a href="#">RSS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>Tickets</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">Online Ticket</a></li>
+                                <li><a href="#">Payment and Prices</a></li>
+                                <li><a href="#">Contact &amp; Booking</a></li>
+                                <li><a href="#">Tickets</a></li>
+                                <li><a href="#">Coupon</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>Matches</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">Standings</a></li>
+                                <li><a href="#">World Cup</a></li>
+                                <li><a href="#">La Lega</a></li>
+                                <li><a href="#">Hyper Cup</a></li>
+                                <li><a href="#">World League</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>Social</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class=" pt-5">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                                All rights reserved | This template is made with <i class="icon-heart"
+                                    aria-hidden="true"></i>by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    <script src="Assets/js/jquery-3.3.1.min.js"></script>
+    <script src="Assets/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="Assets/js/jquery-ui.js"></script>
+    <script src="Assets/js/popper.min.js"></script>
+    <script src="Assets/js/bootstrap.min.js"></script>
+    <script src="Assets/js/owl.carousel.min.js"></script>
+    <script src="Assets/js/jquery.stellar.min.js"></script>
+    <script src="Assets/js/jquery.countdown.min.js"></script>
+    <script src="Assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="Assets/js/jquery.easing.1.3.js"></script>
+    <script src="Assets/js/aos.js"></script>
+    <script src="Assets/js/jquery.fancybox.min.js"></script>
+    <script src="Assets/js/jquery.sticky.js"></script>
+    <script src="Assets/js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="Assets/js/main.js"></script>
+</body>
+</html>
