@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KaraagacSporWebb
+namespace KaraagacSporWebb.AdminPanel
 {
 
 
-    public partial class KaraagacSporWebb
+    public partial class KaraagacSporAdmin
     {
 
         /// <summary>

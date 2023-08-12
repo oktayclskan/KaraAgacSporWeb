@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
     <Content Include="Assets\css\aos.css" />
     <Content Include="Assets\css\bootstrap-datepicker.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
@@ -97,6 +98,7 @@
     <Content Include="Assets\images\img_1.jpg" />
     <Content Include="Assets\images\img_2.jpg" />
     <Content Include="Assets\images\img_3.jpg" />
+    <Content Include="Assets\images\karaagac-logo.png" />
     <Content Include="Assets\images\logo.png" />
     <Content Include="Assets\images\logoWeb.jpg" />
     <Content Include="Assets\images\logo_1.png" />
@@ -139,6 +141,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\KaraagacSporAdmin.Master.cs">
+      <DependentUpon>KaraagacSporAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\KaraagacSporAdmin.Master.designer.cs">
+      <DependentUpon>KaraagacSporAdmin.Master</DependentUpon>
+    </Compile>
     <Compile Include="blog.aspx.cs">
       <DependentUpon>blog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -296,6 +312,7 @@
     <Content Include="Assets\scss\_site-base.scss" />
     <Content Include="Assets\scss\_site-blocks.scss" />
     <Content Include="Assets\scss\_site-navbar.scss" />
+    <Content Include="AdminPanel\KaraagacSporAdmin.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -305,7 +322,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AdminPanel\" />
+    <Folder Include="AdminPanel\Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccesLayer\DataAccesLayer.csproj">
+      <Project>{906d571f-e28d-44e2-adbc-420c21f96e53}</Project>
+      <Name>DataAccesLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

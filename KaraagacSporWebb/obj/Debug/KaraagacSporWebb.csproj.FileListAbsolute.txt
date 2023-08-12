@@ -116,3 +116,5 @@ C:\Users\Oktay Çalışkan\Documents\GitHub\KaraagacSporWeb\KaraagacSporWebb\obj
 C:\Users\Oktay Çalışkan\Documents\GitHub\KaraagacSporWeb\KaraagacSporWebb\obj\Debug\KaraagacSporWebb.csproj.CopyComplete
 C:\Users\Oktay Çalışkan\Documents\GitHub\KaraagacSporWeb\KaraagacSporWebb\obj\Debug\KaraagacSporWebb.dll
 C:\Users\Oktay Çalışkan\Documents\GitHub\KaraagacSporWeb\KaraagacSporWebb\obj\Debug\KaraagacSporWebb.pdb
+C:\Users\Oktay Çalışkan\Documents\GitHub\KaraagacSporWeb\KaraagacSporWebb\bin\DataAccesLayer.dll
+C:\Users\Oktay Çalışkan\Documents\GitHub\KaraagacSporWeb\KaraagacSporWebb\bin\DataAccesLayer.pdb
