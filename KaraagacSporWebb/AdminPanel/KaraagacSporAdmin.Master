@@ -19,18 +19,18 @@
                     <!-- Sidebar-->
                     <div class="border-end bg-white" id="sidebar-wrapper">
                         <div class="sidebar-heading border-bottom bg-light">
-                            <img src="../Assets/images/karaagac-logo.png" width="100" class="" alt="Alternate Text" />
+                            <img src="../Assets/images/karaagac-logo.png" width="100" style="margin-left: 22%;" class="" alt="Alternate Text" />
                             <br />
-                            <h3>Karaagac Spor Admin Panel</h3>
+                            <h3>Yönetici Paneli</h3>
                         </div>
                         <div class="list-group list-group-flush">
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Anasayfa &nbsp <i class="fa-solid fa-house text-primary float-end"></i></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Maçlar &nbsp  <i class="fa-regular fa-futbol text-primary float-end"></i></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Oyuncular &nbsp <i class="fa-solid fa-users-between-lines text-primary float-end"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Anasayfa &nbsp <i class="fa-solid fa-house text-primary float-end side-icon-color"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Maçlar &nbsp  <i class="fa-regular fa-futbol text-primary float-end side-icon-color"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Oyuncular &nbsp <i class="fa-solid fa-users-between-lines text-primary float-end side-icon-color"></i></a>
 
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Haberler &nbsp  <i class="fa-solid fa-newspaper text-primary float-end"></i></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end"></i></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">İletişim &nbsp <i class="fa-solid fa-tty text-primary float-end"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Haberler &nbsp  <i class="fa-solid fa-newspaper text-primary float-end side-icon-color"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end side-icon-color"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">İletişim &nbsp <i class="fa-solid fa-tty text-primary float-end side-icon-color"></i></a>
                         </div>
                     </div>
                     <!-- Page content wrapper-->

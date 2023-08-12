@@ -12425,8 +12425,8 @@ textarea.form-control-lg {
 
 #page-content-wrapper {
     min-width: 100vw;
-    outline:none;
-    border:none;
+    outline: none;
+    border: none;
 }
 
 body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
@@ -12446,4 +12446,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
         margin-left: -15rem;
     }
+}
+
+.side-icon-color {
+    color: rgba(121,173,210) !important;
 }
