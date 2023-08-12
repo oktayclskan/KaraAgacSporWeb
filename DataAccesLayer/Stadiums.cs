@@ -8,6 +8,9 @@ namespace DataAccesLayer
 {
     public class Stadiums
     {
-
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string City { get; set; }
+        public string District { get; set; }
     }
 }
