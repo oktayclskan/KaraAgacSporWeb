@@ -27,8 +27,6 @@
                            
                             <span>Resim seçiniz</span>
                             <asp:FileUpload ID="fu_img1" runat="server" CssClass="form-control form-control-sm" />
-
-                            
                             <div class="">
                                 <label class="form-label">Resim Seciniz</label>
                                 <asp:FileUpload ID="fu_img2" runat="server" CssClass="form-control form-control-sm" />
@@ -42,7 +40,7 @@
 
 
                             <div class="mb-3">
-                                <asp:LinkButton ID="btn_aboutUsUpdate" runat="server" CssClass="btn btn-success d-block">Ekle</asp:LinkButton>
+                                <asp:LinkButton ID="btn_aboutUsAdd" runat="server" CssClass="btn btn-success d-block" OnClick="btn_aboutUsAdd_Click">Ekle</asp:LinkButton>
                             </div>
                         </div>
                     </div>

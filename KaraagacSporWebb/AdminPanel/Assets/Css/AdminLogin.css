@@ -1,0 +1,16 @@
+﻿body {
+    background-color: #6E8997 !important;
+}
+.container .main {
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+    height: 550px;
+    background-color: #2C2D2D;
+    border-radius:10px;
+}
+    .container .main h3 {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        background-color: #0CACFF;
+    }

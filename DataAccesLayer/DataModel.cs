@@ -62,7 +62,6 @@ namespace DataAccesLayer
                     au.Img2 = !reader.IsDBNull(4) ? reader.GetString(4) : " ";
                     au.Img3 = !reader.IsDBNull(5) ? reader.GetString(5) : " ";
                     content.Add(au);
-
                 }
                 return content;
             }
@@ -136,6 +135,27 @@ namespace DataAccesLayer
                 return true;
             }
             catch 
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+        public bool AboutUsAdd(About a)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO AboutUs (Title,Content,Img,Img2,Img3) VALUES(@title,@content,@img,@img2,@img3)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@title", a.Title);
+                cmd.Parameters.AddWithValue("@content", a.Content);
+                cmd.Parameters.AddWithValue("@img", a.Img);
+                cmd.Parameters.AddWithValue("@img2", a.Img2);
+                cmd.Parameters.AddWithValue("@img3", a.Img3);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
             {
                 return false;
             }

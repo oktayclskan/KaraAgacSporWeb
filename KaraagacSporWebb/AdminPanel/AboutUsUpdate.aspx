@@ -46,10 +46,8 @@
                                 <label class="form-label">Resim Seciniz</label>
                                 <asp:FileUpload ID="fu_img3" runat="server" CssClass="form-control form-control-sm" />
                             </div>
-
-
                             <div class="mb-3">
-                                <asp:LinkButton ID="btn_aboutUsUpdate" runat="server" CssClass="btn btn-success d-block">Güncelle</asp:LinkButton>
+                                <asp:LinkButton ID="btn_aboutUsUpdate" runat="server" CssClass="btn btn-success d-block" OnClick="btn_aboutUsUpdate_Click">Güncelle</asp:LinkButton>
                             </div>
                         </div>
                     </div>
