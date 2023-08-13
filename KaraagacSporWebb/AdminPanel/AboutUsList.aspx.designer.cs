@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KaraagacSporWebb
+namespace KaraagacSporWebb.AdminPanel
 {
 
 
-    public partial class AboutUs
+    public partial class AboutUsList
     {
 
         /// <summary>
-        /// rp_aboutus control.
+        /// lv_AboutUs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_aboutus;
+        protected global::System.Web.UI.WebControls.ListView lv_AboutUs;
     }
 }

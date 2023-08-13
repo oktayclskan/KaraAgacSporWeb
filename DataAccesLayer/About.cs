@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataAccesLayer
 {
-    public class AboutUs
+    public class About
     {
         public int ID { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public string ImgOne { get; set; }
-        public string ImgTwo { get; set; }
-        public string ImgThree { get; set; }
+        public string Img { get; set; }
+        public string Img2 { get; set; }
+        public string Img3 { get; set; }
     }
 }

@@ -29,7 +29,7 @@
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Oyuncular &nbsp <i class="fa-solid fa-users-between-lines text-primary float-end side-icon-color"></i></a>
 
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Haberler &nbsp  <i class="fa-solid fa-newspaper text-primary float-end side-icon-color"></i></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end side-icon-color"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="AboutUsList.aspx">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">İletişim &nbsp <i class="fa-solid fa-tty text-primary float-end side-icon-color"></i></a>
                         </div>
                     </div>
@@ -39,8 +39,8 @@
                         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="border: none !important; background-color: white !important">
                             <div class="container-fluid">
                                 <button class="btn btn-secondary pb-2" id="sidebarToggle"><i class="fa-solid fa-arrows-left-right"></i></button>
-
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                                 </div>
                             </div>
                         </nav>
