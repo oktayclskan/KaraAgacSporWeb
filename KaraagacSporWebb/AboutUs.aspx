@@ -19,7 +19,7 @@
             <asp:Repeater ID="rp_aboutus" runat="server">
                 <ItemTemplate>
                     <div class="col-12">
-                        <img src="AdminPanel/Assets/Img/<%# Eval("Img") %>" width="300" />
+                        <img src="AdminPanel/Assets/Img/<%# Eval("Img") %>" width="350" />
                     </div>
                     <div class="col-md-10">
                         <h3><%# Eval("Title") %></h3>
