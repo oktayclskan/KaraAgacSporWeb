@@ -2156,8 +2156,11 @@
     <Content Include="AdminPanel\Assets\Img\aboutimg1.png" />
     <Content Include="AdminPanel\Assets\Img\aboutimg2.png" />
     <Content Include="AdminPanel\Assets\Img\aboutus3.png" />
+    <Content Include="AdminPanel\Assets\Img\profil.png" />
     <Content Include="AdminPanel\Assets\js\scripts.js" />
     <Content Include="AdminPanel\Default.aspx" />
+    <Content Include="AdminPanel\PlayerList.aspx" />
+    <Content Include="AdminPanel\PlayerUpdate.aspx" />
     <Content Include="Assets\css\aos.css" />
     <Content Include="Assets\css\bootstrap-datepicker.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
@@ -2279,6 +2282,20 @@
     </Compile>
     <Compile Include="AdminPanel\KaraagacSporAdmin.Master.designer.cs">
       <DependentUpon>KaraagacSporAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\PlayerList.aspx.cs">
+      <DependentUpon>PlayerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\PlayerList.aspx.designer.cs">
+      <DependentUpon>PlayerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\PlayerUpdate.aspx.cs">
+      <DependentUpon>PlayerUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\PlayerUpdate.aspx.designer.cs">
+      <DependentUpon>PlayerUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="blog.aspx.cs">
       <DependentUpon>blog.aspx</DependentUpon>

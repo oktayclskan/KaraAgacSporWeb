@@ -21,7 +21,43 @@ namespace DataAccesLayer
         #endregion
 
         #region Players
+        public List<Players> PlayerList()
+        {
+            List<Players> players = new List<Players>();
+            try
+            {
+                cmd.CommandText = "Select * From Players";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Players p = new Players();
+                    p.ID = reader.GetInt32(0);
+                    p.Name = reader.GetString(1);
+                    p.Surname = reader.GetString(2);
+                    p.DateOfBirth = reader.GetDateTime(3);
+                    p.DateOfBirthStr = reader.GetDateTime(3).ToShortDateString();
+                    p.UniformNumber = reader.GetString(4);
+                    p.Position = reader.GetString(5);
+                    p.FirstEleven = reader.GetBoolean(6);
+                    p.FirstElevenStr = reader.GetBoolean(6) ? "<label style='color:green'>İlk 11'de</label>" : "<label style='color:red'>İlk 11'değil</label>";
+                    p.StatusPlayer = reader.GetBoolean(7);
+                    p.StatusPlayerStr = reader.GetBoolean(7) ? "<label style='color:green'>Aktif</label>" : "<label style='color:red'>Pasif</label>";
+                    p.Img = reader.GetString(8);
+                    players.Add(p);
+                }
+                return players;
+            }
+            catch 
+            {
+                return null;
+            }
+            finally
+            {
 
+            }
+        }
         #endregion
 
         #region News

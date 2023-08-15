@@ -12,6 +12,7 @@
         </div>
       </div>
     </div>
+
     <div class="site-section">
       <div class="container">
         <div class="row">
@@ -26,8 +27,6 @@
             </div>
           </div>
         </div>
-
-
         <div class="owl-4-slider owl-carousel">
           <div class="item">
             <div class="video-media">
@@ -115,7 +114,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
