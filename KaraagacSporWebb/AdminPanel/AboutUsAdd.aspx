@@ -10,7 +10,6 @@
                     <asp:Panel ID="pnl_succes" runat="server" Visible="false">
                         <div class="alert alert-success" role="alert">
                             Başarıyla Eklendi
-                       
                         </div>
                     </asp:Panel>
                     <asp:Panel ID="pnl_error" runat="server" Visible="false">

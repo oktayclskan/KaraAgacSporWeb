@@ -28,6 +28,7 @@ namespace DataAccesLayer
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+
                     Matches m = new Matches();
                     m.ID = reader.GetInt32(0);
                     m.StadiumName = reader.GetString(1);
@@ -210,7 +211,34 @@ namespace DataAccesLayer
         #endregion
 
         #region OpposingTeam
-
+        public List<OpposingTeam> OpposingTeamsList()
+        {
+            List<OpposingTeam> opposingTeams = new List<OpposingTeam>();
+            try
+            {
+                cmd.CommandText = "Select * From OpposingTeam";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    OpposingTeam ot = new OpposingTeam();
+                    ot.ID = reader.GetInt32(0);
+                    ot.Name = reader.GetString(1);
+                    ot.Logo = reader.GetString(2);
+                    opposingTeams.Add(ot);
+                }
+                return opposingTeams;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         #endregion
 
         #region Stadium
