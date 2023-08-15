@@ -60,7 +60,7 @@
                                     <li class="active"><a href="index.aspx" class="nav-link">Anasayfa</a></li>
                                     <li><a href="matches.aspx" class="nav-link">Maçlar</a></li>
                                     <li><a href="players.aspx" class="nav-link">Oyuncular</a></li>
-                                    <li><a href="blog.aspx" class="nav-link">Blog</a></li>
+                                    <li><a href="blog.aspx" class="nav-link">Haberler</a></li>
                                     <li><a href="AboutUs.aspx" class="nav-link">Hakkımızda</a></li>
                                     <li><a href="contact.aspx" class="nav-link">İletişim</a></li>
                                 </ul>

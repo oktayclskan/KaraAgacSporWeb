@@ -41,7 +41,7 @@
                         <img src="Assets/Img/<%# Eval("Img") %>" width="50" />
                     </td>
                     <td>
-                        <a href="PlayerUpdate.aspx" class="btn btn-success mt-4">Düzenle</a>
+                        <a href="PlayerUpdate.aspx?pid=<%# Eval("ID") %>" class="btn btn-success mt-4">Düzenle</a>
                     </td>
                     <td>
                         <asp:LinkButton ID="lbtn_dlt" runat="server" CssClass="btn btn-danger mt-4" CommandArgument='<%# Eval("ID") %>' CommandName="dlt">Sil</asp:LinkButton>

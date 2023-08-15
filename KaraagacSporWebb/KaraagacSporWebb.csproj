@@ -2159,6 +2159,8 @@
     <Content Include="AdminPanel\Assets\Img\profil.png" />
     <Content Include="AdminPanel\Assets\js\scripts.js" />
     <Content Include="AdminPanel\Default.aspx" />
+    <Content Include="AdminPanel\MatchesList.aspx" />
+    <Content Include="AdminPanel\PlayerAdd.aspx" />
     <Content Include="AdminPanel\PlayerList.aspx" />
     <Content Include="AdminPanel\PlayerUpdate.aspx" />
     <Content Include="Assets\css\aos.css" />
@@ -2282,6 +2284,20 @@
     </Compile>
     <Compile Include="AdminPanel\KaraagacSporAdmin.Master.designer.cs">
       <DependentUpon>KaraagacSporAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\MatchesList.aspx.cs">
+      <DependentUpon>MatchesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\MatchesList.aspx.designer.cs">
+      <DependentUpon>MatchesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\PlayerAdd.aspx.cs">
+      <DependentUpon>PlayerAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\PlayerAdd.aspx.designer.cs">
+      <DependentUpon>PlayerAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\PlayerList.aspx.cs">
       <DependentUpon>PlayerList.aspx</DependentUpon>

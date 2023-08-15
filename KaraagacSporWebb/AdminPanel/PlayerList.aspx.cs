@@ -19,7 +19,14 @@ namespace KaraagacSporWebb.AdminPanel
 
         protected void lv_Players_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-
+            if (e.CommandName == "dlt")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                dm.PlayerDlt(id);
+            }
+            lv_Players.DataSource = dm.PlayerList();
+            lv_Players.DataBind();
         }
+        
     }
 }

@@ -17,6 +17,7 @@ namespace DataAccesLayer
         public int MyTeamScore { get; set; }
         public int OpposingTeamScore { get; set; }
         public bool StadiumOwner { get; set; }
+        public string StadiumOwnerStr { get; set; }
         public string ImgOne { get; set; }
         public string ImgTwo { get; set; }
         public string ImgThree { get; set; }

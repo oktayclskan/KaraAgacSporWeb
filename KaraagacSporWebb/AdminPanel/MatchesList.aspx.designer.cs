@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KaraagacSporWebb
+namespace KaraagacSporWebb.AdminPanel
 {
 
 
-    public partial class players
+    public partial class MatchesList
     {
 
         /// <summary>
-        /// rp_players control.
+        /// lv_Matches control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_players;
+        protected global::System.Web.UI.WebControls.ListView lv_Matches;
     }
 }
