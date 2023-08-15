@@ -214,7 +214,35 @@ namespace DataAccesLayer
         #endregion
 
         #region Stadium
-
+        public List<Stadiums> StadiumList()
+        {
+            List<Stadiums> stadiums = new List<Stadiums>();
+            try
+            {
+                cmd.CommandText=("Select * From Stadiums");
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Stadiums st = new Stadiums();
+                    st.ID = reader.GetInt32(0);
+                    st.Name = reader.GetString(1);
+                    st.City = reader.GetString(2);
+                    st.District = reader.GetString(3);
+                    stadiums.Add(st);
+                }
+                return stadiums;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         #endregion
 
         #region AboutAs
