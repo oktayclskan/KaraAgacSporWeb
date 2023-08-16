@@ -17,33 +17,71 @@ namespace DataAccesLayer
         }
 
         #region Matches
+        //public List<Matches> MatchesList()
+        //{
+        //    List<Matches> matches = new List<Matches>();
+        //    try
+        //    {
+        //        cmd.CommandText = " Select M.ID,s.Name,M.MyTeam,op.Name,M.MyTeamScore,OpposingTeamScore,M.StadiumOwner,M.ImgOne,M.ImgTwo,M.ImgThree,M.ImgFour,M.ImgFive,M.MatchDateTime From Matches AS M Join Stadiums AS s ON M.StadiumID = s.ID Join OpposingTeam op ON M.OpposingTeamID = op.ID  ";
+        //        cmd.Parameters.Clear();
+        //        con.Open();
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+
+        //            Matches m = new Matches();
+        //            m.ID = reader.GetInt32(0);
+        //            m.StadiumName = reader.GetString(1);
+        //            m.MyTeam = reader.GetString(2);
+        //            m.OppossingTeamName = reader.GetString(3);
+        //            m.MyTeamScore = reader.GetInt32(4);
+        //            m.OpposingTeamScore = reader.GetInt32(5);
+        //            m.StadiumOwner = reader.GetBoolean(6);
+        //            m.StadiumOwnerStr = reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
+        //            m.ImgOne = reader.GetString(7);
+        //            m.ImgTwo = reader.GetString(8);
+        //            m.ImgThree = reader.GetString(9);
+        //            m.ImgFour = reader.GetString(10);
+        //            m.ImgFive = reader.GetString(11);
+        //            m.MatchDateTime = reader.GetDateTime(12);
+        //            matches.Add(m);
+        //        }
+        //        return matches;
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+
+        //}
+
         public List<Matches> MatchesList()
         {
             List<Matches> matches = new List<Matches>();
             try
             {
-                cmd.CommandText = " Select M.ID,s.Name,M.MyTeam,op.Name,M.MyTeamScore,OpposingTeamScore,M.StadiumOwner,M.ImgOne,M.ImgTwo,M.ImgThree,M.ImgFour,M.ImgFive,M.MatchDateTime From Matches AS M Join Stadiums AS s ON M.StadiumID = s.ID Join OpposingTeam op ON M.OpposingTeamID = op.ID  ";
+                cmd.CommandText = "SELECT m.ID, m.MatchDateTime, m.MyTeam, ot.Name, MyTeamScore, OpposingTeamScore, md.Time, md.Goal, c.Name, p.Name, ot.Logo FROM Matches as m\r\nJOIN OpposingTeam AS ot ON ot.ID = m.OpposingTeamID\r\nJOIN MatchDetail AS md ON md.MatchID = m.ID\r\nJOIN Card AS c ON c.ID = md.CardID\r\nJOIN Players AS p ON p.ID = md.PlayerID\r\n";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-
                     Matches m = new Matches();
                     m.ID = reader.GetInt32(0);
-                    m.StadiumName = reader.GetString(1);
+                    m.MatchDateTime = reader.GetDateTime(1);
                     m.MyTeam = reader.GetString(2);
-                    m.OppossingTeamName = reader.GetString(3);
+                    m.OpposingTeamName = reader.GetString(3);
                     m.MyTeamScore = reader.GetInt32(4);
                     m.OpposingTeamScore = reader.GetInt32(5);
-                    m.StadiumOwner = reader.GetBoolean(6);
-                    m.StadiumOwnerStr = reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
-                    m.ImgOne = reader.GetString(7);
-                    m.ImgTwo = reader.GetString(8);
-                    m.ImgThree = reader.GetString(9);
-                    m.ImgFour = reader.GetString(10);
-                    m.ImgFive = reader.GetString(11);
-                    m.MatchDateTime = reader.GetDateTime(12);
+                    m.MatchDetailTime = reader.GetString(6);
+                    m.Goal = reader.GetBoolean(7);
+                    m.CardName = reader.GetString(8);
+                    m.PlayerName = reader.GetString(9);
+                    m.OpposingTeamLogo = reader.GetString(10);
                     matches.Add(m);
                 }
                 return matches;
@@ -52,11 +90,7 @@ namespace DataAccesLayer
             {
                 return null;
             }
-            finally
-            {
-                con.Close();
-            }
-
+            finally { con.Close(); }
         }
         #endregion
 
@@ -74,17 +108,17 @@ namespace DataAccesLayer
                 {
                     Players p = new Players();
                     p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Surname = reader.GetString(2);
-                    p.DateOfBirth = reader.GetDateTime(3);
-                    p.DateOfBirthStr = reader.GetDateTime(3).ToShortDateString();
-                    p.UniformNumber = reader.GetString(4);
-                    p.Position = reader.GetString(5);
-                    p.FirstEleven = reader.GetBoolean(6);
-                    p.FirstElevenStr = reader.GetBoolean(6) ? "<label style='color:green'>İlk 11'de</label>" : "<label style='color:red'>İlk 11'değil</label>";
-                    p.StatusPlayer = reader.GetBoolean(7);
-                    p.StatusPlayerStr = reader.GetBoolean(7) ? "<label style='color:green'>Aktif</label>" : "<label style='color:red'>Pasif</label>";
-                    p.Img = reader.GetString(8);
+                    p.PlayerName = reader.GetString(1);
+                    p.PlayerSurname = reader.GetString(2);
+                    p.PlayerDateOfBirth = reader.GetDateTime(3);
+                    p.PlayerDateOfBirthStr = reader.GetDateTime(3).ToShortDateString();
+                    p.PlayerUniformNumber = reader.GetString(4);
+                    p.PlayerPosition = reader.GetString(5);
+                    p.PlayerFirstEleven = reader.GetBoolean(6);
+                    p.PlayerFirstElevenStr = reader.GetBoolean(6) ? "<label style='color:green'>İlk 11'de</label>" : "<label style='color:red'>İlk 11'değil</label>";
+                    p.PlayerStatusPlayer = reader.GetBoolean(7);
+                    p.PlayerStatusPlayerStr = reader.GetBoolean(7) ? "<label style='color:green'>Aktif</label>" : "<label style='color:red'>Pasif</label>";
+                    p.PlayerImg = reader.GetString(8);
                     players.Add(p);
                 }
                 return players;
@@ -111,14 +145,14 @@ namespace DataAccesLayer
                 while (reader.Read())
                 {
                     p.ID = reader.GetInt32(0);
-                    p.Name = reader.GetString(1);
-                    p.Surname = reader.GetString(2);
-                    p.DateOfBirth = reader.GetDateTime(3);
-                    p.UniformNumber = reader.GetString(4);
-                    p.Position = reader.GetString(5);
-                    p.FirstEleven = reader.GetBoolean(6);
-                    p.StatusPlayer = reader.GetBoolean(7);
-                    p.Img = reader.GetString(8);
+                    p.PlayerName = reader.GetString(1);
+                    p.PlayerSurname = reader.GetString(2);
+                    p.PlayerDateOfBirth = reader.GetDateTime(3);
+                    p.PlayerUniformNumber = reader.GetString(4);
+                    p.PlayerPosition = reader.GetString(5);
+                    p.PlayerFirstEleven = reader.GetBoolean(6);
+                    p.PlayerStatusPlayer = reader.GetBoolean(7);
+                    p.PlayerImg = reader.GetString(8);
                 }
                 return p;
             }
@@ -138,14 +172,14 @@ namespace DataAccesLayer
                 cmd.CommandText = "Update Players Set Name=@name,Surname=@surname,DateOfBirth=@dateOfBirth,UniformNumber=@uniformNumber,Position=@position,FirstEleven=@firstEleven,StatusPlayer=@statusPlayer,Img=@img Where ID=@id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", p.ID);
-                cmd.Parameters.AddWithValue("@name", p.Name);
-                cmd.Parameters.AddWithValue("@surname", p.Surname);
-                cmd.Parameters.AddWithValue("@dateOfBirth", p.DateOfBirth);
-                cmd.Parameters.AddWithValue("@uniformNumber", p.UniformNumber);
-                cmd.Parameters.AddWithValue("@position", p.Position);
-                cmd.Parameters.AddWithValue("@firstEleven", p.FirstEleven);
-                cmd.Parameters.AddWithValue("@statusPlayer", p.StatusPlayer);
-                cmd.Parameters.AddWithValue("@img", p.Img);
+                cmd.Parameters.AddWithValue("@name", p.PlayerName);
+                cmd.Parameters.AddWithValue("@surname", p.PlayerSurname);
+                cmd.Parameters.AddWithValue("@dateOfBirth", p.PlayerDateOfBirth);
+                cmd.Parameters.AddWithValue("@uniformNumber", p.PlayerUniformNumber);
+                cmd.Parameters.AddWithValue("@position", p.PlayerPosition);
+                cmd.Parameters.AddWithValue("@firstEleven", p.PlayerFirstEleven);
+                cmd.Parameters.AddWithValue("@statusPlayer", p.PlayerStatusPlayer);
+                cmd.Parameters.AddWithValue("@img", p.PlayerImg);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -162,14 +196,14 @@ namespace DataAccesLayer
             {
                 cmd.CommandText = "Insert Into Players (Name,Surname,DateOfBirth,UniformNumber,Position,FirstEleven,StatusPlayer,Img) Values(@name,@surname,@dateOfBirth,@uniformNumber,@position,@firstEleven,@statusPlayer,@img)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@name", p.Name);
-                cmd.Parameters.AddWithValue("@surname", p.Surname);
-                cmd.Parameters.AddWithValue("@dateOfBirth", p.DateOfBirth);
-                cmd.Parameters.AddWithValue("@uniformNumber", p.UniformNumber);
-                cmd.Parameters.AddWithValue("@position", p.Position);
-                cmd.Parameters.AddWithValue("@firstEleven", p.FirstEleven);
-                cmd.Parameters.AddWithValue("@statusPlayer", p.StatusPlayer);
-                cmd.Parameters.AddWithValue("@img", p.Img);
+                cmd.Parameters.AddWithValue("@name", p.PlayerName);
+                cmd.Parameters.AddWithValue("@surname", p.PlayerSurname);
+                cmd.Parameters.AddWithValue("@dateOfBirth", p.PlayerDateOfBirth);
+                cmd.Parameters.AddWithValue("@uniformNumber", p.PlayerUniformNumber);
+                cmd.Parameters.AddWithValue("@position", p.PlayerPosition);
+                cmd.Parameters.AddWithValue("@firstEleven", p.PlayerFirstEleven);
+                cmd.Parameters.AddWithValue("@statusPlayer", p.PlayerStatusPlayer);
+                cmd.Parameters.AddWithValue("@img", p.PlayerImg);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -224,8 +258,8 @@ namespace DataAccesLayer
                 {
                     OpposingTeam ot = new OpposingTeam();
                     ot.ID = reader.GetInt32(0);
-                    ot.Name = reader.GetString(1);
-                    ot.Logo = reader.GetString(2);
+                    ot.OpposingTeamName = reader.GetString(1);
+                    ot.OpposingTeamLogo = reader.GetString(2);
                     opposingTeams.Add(ot);
                 }
                 return opposingTeams;
@@ -247,7 +281,7 @@ namespace DataAccesLayer
             List<Stadiums> stadiums = new List<Stadiums>();
             try
             {
-                cmd.CommandText=("Select * From Stadiums");
+                cmd.CommandText = ("Select * From Stadiums");
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -255,9 +289,9 @@ namespace DataAccesLayer
                 {
                     Stadiums st = new Stadiums();
                     st.ID = reader.GetInt32(0);
-                    st.Name = reader.GetString(1);
-                    st.City = reader.GetString(2);
-                    st.District = reader.GetString(3);
+                    st.StadiumName = reader.GetString(1);
+                    st.StadiumCity = reader.GetString(2);
+                    st.StadiumDistrict = reader.GetString(3);
                     stadiums.Add(st);
                 }
                 return stadiums;

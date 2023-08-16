@@ -35,23 +35,20 @@
                     <ItemTemplate>
                         <div class="item">
                             <div class="video-media">
-                                <img src="AdminPanel/Assets/Img/<%# Eval("Img") %>" alt="Image" class="img-fluid">
+                                <img src="AdminPanel/Assets/Img/<%# Eval("PlayerImg") %>" alt="Image" class="img-fluid">
                                 <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center">
                                     <span class="icon mr-3">
                                         <span class="icon-play"></span>
                                     </span>
                                     <div class="caption">
-                                        <span class="meta"><%# Eval("UniformNumber") %>/ <%# Eval("Position") %></span>
-                                        <h3 class="m-0"> <%# Eval("Name") %> <%# Eval("Surname") %> </h3>
+                                        <span class="meta"><%# Eval("PlayerUniformNumber") %>/ <%# Eval("PlayerPosition") %></span>
+                                        <h3 class="m-0"> <%# Eval("PlayerName") %> <%# Eval("PlayerSurname") %> </h3>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-
-
-
             </div>
         </div>
     </div>

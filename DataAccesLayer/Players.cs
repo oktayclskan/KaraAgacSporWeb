@@ -9,16 +9,16 @@ namespace DataAccesLayer
     public class Players
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string DateOfBirthStr { get; set; }
-        public string UniformNumber { get; set; }
-        public string Position { get; set; }
-        public bool FirstEleven { get; set; }
-        public string FirstElevenStr { get; set; }
-        public bool StatusPlayer { get; set; }
-        public string StatusPlayerStr { get; set; }
-        public string Img { get; set; }
+        public string PlayerName { get; set; }
+        public string PlayerSurname { get; set; }
+        public DateTime PlayerDateOfBirth { get; set; }
+        public string PlayerDateOfBirthStr { get; set; }
+        public string PlayerUniformNumber { get; set; }
+        public string PlayerPosition { get; set; }
+        public bool PlayerFirstEleven { get; set; }
+        public string PlayerFirstElevenStr { get; set; }
+        public bool PlayerStatusPlayer { get; set; }
+        public string PlayerStatusPlayerStr { get; set; }
+        public string PlayerImg { get; set; }
     }
 }

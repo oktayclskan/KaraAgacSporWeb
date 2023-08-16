@@ -31,19 +31,19 @@ namespace KaraagacSporWebb.AdminPanel
                             if (!string.IsNullOrEmpty(tb_position.Text.Trim()))
                             {
                                 Players p = new Players();
-                                p.Name = tb_name.Text;
-                                p.Surname = tb_surname.Text;
-                                p.DateOfBirth = Convert.ToDateTime(tb_dateOfBirth.Text);
-                                p.UniformNumber = tb_uniformNumber.Text;
-                                p.Position = tb_position.Text;
-                                p.FirstEleven = cb_firstEleven.Checked;
-                                p.StatusPlayer = cb_playerStatus.Checked;
+                                p.PlayerName = tb_name.Text;
+                                p.PlayerSurname = tb_surname.Text;
+                                p.PlayerDateOfBirth = Convert.ToDateTime(tb_dateOfBirth.Text);
+                                p.PlayerUniformNumber = tb_uniformNumber.Text;
+                                p.PlayerPosition = tb_position.Text;
+                                p.PlayerFirstEleven = cb_firstEleven.Checked;
+                                p.PlayerStatusPlayer = cb_playerStatus.Checked;
                                 if (fu_img.HasFile)
                                 {
                                     FileInfo img1 = new FileInfo(fu_img.FileName);
                                     string connect = img1.Extension;
                                     string name = Guid.NewGuid().ToString();
-                                    p.Img = name + connect;
+                                    p.PlayerImg = name + connect;
                                     fu_img.SaveAs(Server.MapPath("Assets/Img/" + name + connect));
                                     if (dm.PlayerAdd(p))
                                     {

@@ -10,3 +10,9 @@ C:\Users\rampa\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug
 C:\Users\rampa\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug\DataAccesLayer.csproj.CoreCompileInputs.cache
 C:\Users\rampa\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug\DataAccesLayer.dll
 C:\Users\rampa\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug\DataAccesLayer.pdb
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\bin\Debug\DataAccesLayer.dll
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\bin\Debug\DataAccesLayer.pdb
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug\DataAccesLayer.csproj.AssemblyReference.cache
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug\DataAccesLayer.csproj.CoreCompileInputs.cache
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug\DataAccesLayer.dll
+C:\Users\HsnHs\OneDrive\Belgeler\GitHub\KaraagacSporWeb\DataAccesLayer\obj\Debug\DataAccesLayer.pdb
