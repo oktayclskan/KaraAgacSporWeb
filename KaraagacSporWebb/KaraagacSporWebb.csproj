@@ -2208,6 +2208,7 @@
     <Content Include="Assets\images\person_5.jpg" />
     <Content Include="Assets\images\person_7.jpg" />
     <Content Include="Assets\images\SOCCER.png" />
+    <Content Include="Assets\images\sports-development-logo.jpg" />
     <Content Include="Assets\images\TM.png" />
     <Content Include="Assets\js\aos.js" />
     <Content Include="Assets\js\bootstrap-datepicker.min.js" />

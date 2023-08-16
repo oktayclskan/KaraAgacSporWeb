@@ -64,7 +64,7 @@ namespace DataAccesLayer
             List<Matches> matches = new List<Matches>();
             try
             {
-                cmd.CommandText = "SELECT m.ID, m.MatchDateTime, m.MyTeam, ot.Name, MyTeamScore, OpposingTeamScore, md.Time, md.Goal, c.Name, p.Name, ot.Logo FROM Matches as m\r\nJOIN OpposingTeam AS ot ON ot.ID = m.OpposingTeamID\r\nJOIN MatchDetail AS md ON md.MatchID = m.ID\r\nJOIN Card AS c ON c.ID = md.CardID\r\nJOIN Players AS p ON p.ID = md.PlayerID\r\n";
+                cmd.CommandText = "SELECT m.ID, m.MatchDateTime, m.MyTeam, ot.Name,m.MyTeamScore,m.OpposingTeamScore, md.Time, md.Goal, c.Name, p.Name, ot.Logo FROM Matches as m JOIN OpposingTeam AS ot ON ot.ID = m.OpposingTeamID JOIN MatchDetail AS md ON md.MatchID = m.ID JOIN Card AS c ON c.ID = md.CardID JOIN Players AS p ON p.ID = md.PlayerID";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

@@ -17,104 +17,70 @@
 
 
     <div class="container">
-        <div class="d-flex team-vs">
+      <%--  <div class="d-flex team-vs">
+
+            <div class="row mt-5">
+                <div class="col-lg-12 mt-5">
+                    <div class="d-flex team-vs">
+                        <div class="team-1 w-50">
+                            <div class="team-details w-100 text-center">
+                                <img src="Assets/images/<%# Eval("OpposingTeamLogo") %>" alt="Image" class="img-fluid">
+                                <h3><%# Eval("MyTeam") %></h3>
+                                <ul class="list-unstyled">
+                                    <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-2 w-50">
+                            <div class="team-details w-100 text-center">
+                                <img src="Assets/images/<%# Eval("OpposingTeamLogo") %>" alt="Image" class="img-fluid">
+                                <h3><%# Eval("OpposingTeamName") %></h3>
+                                <ul class="list-unstyled">
+                                    <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>--%>
+
+
+
+
+
+        <div class="row mt-5">
             <asp:Repeater ID="rp_matches" runat="server">
                 <ItemTemplate>
-                    <div class="row mt-5">
-                        <div class="col-lg-12 mt-5">
-                            <div class="d-flex team-vs">
-                                <div class="team-1 w-50">
-                                    <div class="team-details w-100 text-center">
-                                        <img src="Assets/images//<%# Eval("OpposingTeamLogo") %>" alt="Image" class="img-fluid">
-                                        <h3><%# Eval("MyTeam") %></h3>
-                                        <ul class="list-unstyled">
-                                            <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
-                                        </ul>
-                                    </div>
+                    <div class="col-lg-12 mt-5">
+                        <div class="d-flex team-vs mt-4">
+                            <span class="score"><%#Eval("MyTeamScore") %>-<%#Eval("OpposingTeamScore") %></span>
+                            <div class="team-1 w-50">
+                                <div class="team-details w-100 text-center">
+                                    <img src="Assets/images/karaagac-logo.png" alt="Image" class="img-fluid">
+                                    <h3><%# Eval("MyTeam") %></h3>
+                                    <ul class="list-unstyled">
+                                        <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
+                                    </ul>
                                 </div>
-                                <div class="team-2 w-50">
-                                    <div class="team-details w-100 text-center">
-                                        <img src="Assets/images/<%# Eval("OpposingTeamLogo") %>" alt="Image" class="img-fluid">
-                                        <h3><%# Eval("OpposingTeamName") %></h3>
-                                        <ul class="list-unstyled">
-                                            <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
-                                        </ul>
-                                    </div>
+                            </div>
+                            <div class="team-2 w-50">
+                                <div class="team-details w-100 text-center">
+                                    <img src="Assets/images/<%# Eval("OpposingTeamLogo") %>" class="img-fluid">
+                                    <h3><%# Eval("OpposingTeamName") %></h3>
+                                    <ul class="list-unstyled">
+                                        <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-
-
-
-
-
-        <div class="row mt-5">
-            <div class="col-lg-12 mt-5">
-                <div class="d-flex team-vs">
-                    <span class="score">4-1</span>
-                    <div class="team-1 w-50">
-                        <div class="team-details w-100 text-center">
-                            <img src="Assets/images/logo_1.png" alt="Image" class="img-fluid">
-                            <h3>LA LEGA <span>(win)</span></h3>
-                            <ul class="list-unstyled">
-                                <li>Anja Landry (7)</li>
-                                <li>Eadie Salinas (12)</li>
-                                <li>Ashton Allen (10)</li>
-                                <li>Baxter Metcalfe (5)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-2 w-50">
-                        <div class="team-details w-100 text-center">
-                            <img src="Assets/images/logo_2.png" alt="Image" class="img-fluid">
-                            <h3>JUVENDU <span>(loss)</span></h3>
-                            <ul class="list-unstyled">
-                                <li>Macauly Green (3)</li>
-                                <li>Arham Stark (8)</li>
-                                <li>Stephan Murillo (9)</li>
-                                <li>Ned Ritter (5)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-lg-12 mt-5">
-                <div class="d-flex team-vs">
-                    <span class="score">4-1</span>
-                    <div class="team-1 w-50">
-                        <div class="team-details w-100 text-center">
-                            <img src="Assets/images/logo_1.png" alt="Image" class="img-fluid">
-                            <h3>LA LEGA <span>(win)</span></h3>
-                            <ul class="list-unstyled">
-                                <li>Anja Landry (7)</li>
-                                <li>Eadie Salinas (12)</li>
-                                <li>Ashton Allen (10)</li>
-                                <li>Baxter Metcalfe (5)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-2 w-50">
-                        <div class="team-details w-100 text-center">
-                            <img src="Assets/images/logo_2.png" alt="Image" class="img-fluid">
-                            <h3>JUVENDU <span>(loss)</span></h3>
-                            <ul class="list-unstyled">
-                                <li>Macauly Green (3)</li>
-                                <li>Arham Stark (8)</li>
-                                <li>Stephan Murillo (9)</li>
-                                <li>Ned Ritter (5)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+     
 
 
     <div class="site-section">
