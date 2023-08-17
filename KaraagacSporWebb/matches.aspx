@@ -15,6 +15,7 @@
     </div>
 
 
+
     <div class="container">
       <%--  <div class="d-flex team-vs">
 
@@ -60,7 +61,7 @@
                                     <img src="Assets/images/karaagac-logo.png" alt="Image" class="img-fluid">
                                     <h3><%# Eval("MyTeam") %></h3>
                                     <ul class="list-unstyled">
-                                        <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
+                                        <%--<li><%# Eval("PlayerName") %> \ ( <%# Eval("MatchDetailTime") %> ) \ (<%# Eval("Goal") %>) \ (<%# Eval("CardID") %>)</li>--%>
                                     </ul>
                                 </div>
                             </div>
@@ -69,7 +70,7 @@
                                     <img src="Assets/images/<%# Eval("OpposingTeamLogo") %>" class="img-fluid">
                                     <h3><%# Eval("OpposingTeamName") %></h3>
                                     <ul class="list-unstyled">
-                                        <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>
+                                       <%-- <li><%# Eval("PlayerName") %> ( <%# Eval("MatchDetailTime") %> )</li>--%>
                                     </ul>
                                 </div>
                             </div>

@@ -13,15 +13,15 @@ namespace KaraagacSporWebb.AdminPanel
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Admin"] !=null)
-            {
-                Admin a = (Admin)Session["Admin"];
-                lb_loginName.Text= $"{a.Name} {a.Surname}";
-            }
-            else
-            {
-                Response.Redirect("AdminLogin.aspx");    
-            }
+            //if (Session["Admin"] !=null)
+            //{
+            //    Admin a = (Admin)Session["Admin"];
+            //    lb_loginName.Text= $"{a.Name} {a.Surname}";
+            //}
+            //else
+            //{
+            //    Response.Redirect("AdminLogin.aspx");    
+            //}
         }
     }
 }

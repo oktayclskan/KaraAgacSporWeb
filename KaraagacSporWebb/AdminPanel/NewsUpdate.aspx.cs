@@ -23,8 +23,8 @@ namespace KaraagacSporWebb.AdminPanel
                     tb_title.Text = n.NewsTitle;
                     tb_description.Text = n.NewsDescription;
                     tb_content.Text = n.NewsContent;
-                    asp_cardImg.ImageUrl= "Assets/Img/" + n.NewsCardImg;
-                    asp_contentImg.ImageUrl= "Assets/Img/" + n.NewsContentImg;
+                    asp_cardImg.ImageUrl = "Assets/Img/" + n.NewsCardImg;
+                    asp_contentImg.ImageUrl = "Assets/Img/" + n.NewsContentImg;
                 }
             }
             else
@@ -47,35 +47,37 @@ namespace KaraagacSporWebb.AdminPanel
                 string name = Guid.NewGuid().ToString();
                 n.NewsCardImg = name + connect;
                 fu_cardImg.SaveAs(Server.MapPath("Assets/Img/" + name + connect));
-                if (fu_ContentImg.HasFile)
-                {
-                    FileInfo contentImg = new FileInfo(fu_ContentImg.FileName);
-                    string img2connect = contentImg.Extension;
-                    string img2name = Guid.NewGuid().ToString();
-                    n.NewsContentImg = img2name + img2connect;
-                    if (dm.NewsUpdate(n))
-                    {
-                        pnl_succes.Visible = true;
-                        pnl_error.Visible = false;
-                    }
-                    else
-                    {
-                        pnl_error.Visible = true;
-                        lbl_eror.Text = "Güncellenirken bir hata oluştu";
-                    }
-                }
-                else
-                {
-                    n.NewsContentImg = n.NewsContentImg;
-                    if (dm.NewsUpdate(n))
-                    {
-                        pnl_succes.Visible = true;
-                    }
-                }
+
             }
             else
             {
                 n.NewsCardImg = n.NewsCardImg;
+                if (dm.NewsUpdate(n))
+                {
+                    pnl_succes.Visible = true;
+                }
+            }
+            if (fu_ContentImg.HasFile)
+            {
+                FileInfo contentImg = new FileInfo(fu_ContentImg.FileName);
+                string img2connect = contentImg.Extension;
+                string img2name = Guid.NewGuid().ToString();
+                n.NewsContentImg = img2name + img2connect;
+                fu_ContentImg.SaveAs(Server.MapPath("Assets/Img/" + img2name + img2connect));
+                if (dm.NewsUpdate(n))
+                {
+                    pnl_succes.Visible = true;
+                    pnl_error.Visible = false;
+                }
+                else
+                {
+                    pnl_error.Visible = true;
+                    lbl_eror.Text = "Güncellenirken bir hata oluştu";
+                }
+            }
+            else
+            {
+                n.NewsContentImg = n.NewsContentImg;
                 if (dm.NewsUpdate(n))
                 {
                     pnl_succes.Visible = true;

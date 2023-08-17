@@ -25,7 +25,7 @@ namespace KaraagacSporWebb.AdminPanel
                     tb_dateOfBirth.Text = p.PlayerDateOfBirth.ToShortDateString();
                     tb_uniformNumber.Text = p.PlayerUniformNumber;
                     tb_position.Text = p.PlayerPosition;
-                    tb_firtEleven.Checked = p.PlayerFirstEleven ;
+                    tb_firtEleven.Checked = p.PlayerFirstEleven;
                     tb_status.Checked = p.PlayerStatusPlayer;
                     asp_img.ImageUrl = "Assets/Img/" + p.PlayerImg;
                 }
