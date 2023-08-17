@@ -30,21 +30,21 @@
             <ItemTemplate>
                 <tr>
                     <td class="p-2"><%# Eval("ID") %></td>
-                    <td><%# Eval("Name") %></td>
-                    <td class="text-center"><%# Eval("Surname") %></td>
-                    <td class="text-center"><%# Eval("DateOfBirthStr") %></td>
-                    <td class="text-center"><%# Eval("UniformNumber") %></td>
-                    <td class="text-center"><%# Eval("Position") %></td>
-                    <td class="text-center"><%# Eval("FirstElevenStr") %></td>
-                    <td class="text-center"><%# Eval("StatusPlayerStr") %></td>
+                    <td><%# Eval("PlayerName") %></td>
+                    <td class="text-center"><%# Eval("PlayerSurname") %></td>
+                    <td class="text-center"><%# Eval("PlayerDateOfBirthStr") %></td>
+                    <td class="text-center"><%# Eval("PlayerUniformNumber") %></td>
+                    <td class="text-center"><%# Eval("PlayerPosition") %></td>
+                    <td class="text-center"><%# Eval("PlayerStatusPlayer") %></td>
+                    <td class="text-center"><%# Eval("PlayerStatusPlayerStr") %></td>
                     <td>
-                        <img src="Assets/Img/<%# Eval("Img") %>" width="50" />
+                        <img src="Assets/Img/<%# Eval("PlayerImg") %>" width="100" />
                     </td>
                     <td>
-                        <a href="PlayerUpdate.aspx?pid=<%# Eval("ID") %>" class="btn btn-success mt-4">Düzenle</a>
+                        <a href="PlayerUpdate.aspx?pid=<%# Eval("ID") %>" class="btn btn-success mt-2">Düzenle</a>
                     </td>
                     <td>
-                        <asp:LinkButton ID="lbtn_dlt" runat="server" CssClass="btn btn-danger mt-4" CommandArgument='<%# Eval("ID") %>' CommandName="dlt">Sil</asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_dlt" runat="server" CssClass="btn btn-danger mt-2" CommandArgument='<%# Eval("ID") %>' CommandName="dlt">Sil</asp:LinkButton>
                     </td>
                 </tr>
             </ItemTemplate>

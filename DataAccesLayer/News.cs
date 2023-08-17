@@ -13,6 +13,7 @@ namespace DataAccesLayer
         public string NewsDescription { get; set; }
         public string NewsContent { get; set; }
         public DateTime NewsDate { get; set; }
+        public string NewsDateStr { get; set; }
         public string NewsCardImg { get; set; }
         public string NewsContentImg { get; set; }
     }

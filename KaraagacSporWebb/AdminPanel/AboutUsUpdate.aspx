@@ -20,8 +20,10 @@
                         </div>
                     </asp:Panel>
                     <div class="col">
+                        <h4 class="mt-3 text-secondary">Başlık</h4>
                         <asp:TextBox ID="tb_title" CssClass="form-control mt-2" runat="server" placeholder="Baslik"></asp:TextBox>
                         <div>
+                            <h4 class="mt-3 text-secondary">İçerik</h4>
                             <asp:TextBox ID="tb_content" TextMode="MultiLine" CssClass="form-control  mt-2" runat="server" placeholder="içerik"></asp:TextBox>
                         </div>
                         <div>

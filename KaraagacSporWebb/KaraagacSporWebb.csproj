@@ -2160,7 +2160,11 @@
     <Content Include="AdminPanel\Assets\Img\profil.png" />
     <Content Include="AdminPanel\Assets\js\scripts.js" />
     <Content Include="AdminPanel\Default.aspx" />
+    <Content Include="AdminPanel\HomePage.aspx" />
     <Content Include="AdminPanel\MatchesList.aspx" />
+    <Content Include="AdminPanel\NewsAdd.aspx" />
+    <Content Include="AdminPanel\NewsList.aspx" />
+    <Content Include="AdminPanel\NewsUpdate.aspx" />
     <Content Include="AdminPanel\PlayerAdd.aspx" />
     <Content Include="AdminPanel\PlayerList.aspx" />
     <Content Include="AdminPanel\PlayerUpdate.aspx" />
@@ -2280,6 +2284,13 @@
     <Compile Include="AdminPanel\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\KaraagacSporAdmin.Master.cs">
       <DependentUpon>KaraagacSporAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2293,6 +2304,27 @@
     </Compile>
     <Compile Include="AdminPanel\MatchesList.aspx.designer.cs">
       <DependentUpon>MatchesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\NewsAdd.aspx.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\NewsAdd.aspx.designer.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\NewsList.aspx.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\NewsList.aspx.designer.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\NewsUpdate.aspx.cs">
+      <DependentUpon>NewsUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\NewsUpdate.aspx.designer.cs">
+      <DependentUpon>NewsUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\PlayerAdd.aspx.cs">
       <DependentUpon>PlayerAdd.aspx</DependentUpon>

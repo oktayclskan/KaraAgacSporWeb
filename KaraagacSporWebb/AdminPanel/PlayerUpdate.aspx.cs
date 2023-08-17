@@ -57,6 +57,7 @@ namespace KaraagacSporWebb.AdminPanel
                 if (dm.PlayerUpdate(p))
                 {
                     pnl_succes.Visible = true;
+                    pnl_error.Visible = false;
                 }
                 else
                 {

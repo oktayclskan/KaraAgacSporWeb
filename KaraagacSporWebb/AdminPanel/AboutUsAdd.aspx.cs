@@ -57,6 +57,7 @@ namespace KaraagacSporWebb.AdminPanel
                                     tb_title.Text = " ";
                                     tb_content.Text = " ";
                                     pnl_succes.Visible = true;
+                                    pnl_error.Visible = false;
                                 }
                                 else
                                 {
@@ -64,7 +65,22 @@ namespace KaraagacSporWebb.AdminPanel
                                     lbl_eror.Text = "Eklenirken Bir Hata Oluştu";
                                 }
                             }
+                            else
+                            {
+                                pnl_error.Visible = true;
+                                lbl_eror.Text = "Lütfen Resim ekleyiniz";
+                            }
                         }
+                        else
+                        {
+                            pnl_error.Visible = true;
+                            lbl_eror.Text = "Lütfen Resim ekleyiniz";
+                        }
+                    }
+                    else
+                    {
+                        pnl_error.Visible = true;
+                        lbl_eror.Text = "Lütfen Resim ekleyiniz";
                     }
 
                 }

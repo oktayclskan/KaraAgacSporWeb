@@ -55,12 +55,18 @@ namespace KaraagacSporWebb.AdminPanel
                                         cb_firstEleven.Checked =false;
                                         cb_playerStatus.Checked =false;
                                         pnl_succes.Visible = true;
+                                        pnl_error.Visible = false;
                                     }
                                     else
                                     {
                                         pnl_error.Visible = true;
                                         lbl_eror.Text = "Eklenirken Bir Hata Oluştu";
                                     }
+                                }
+                                else
+                                {
+                                    pnl_error.Visible = true;
+                                    lbl_eror.Text = "Lütfen Resim ekleyiniz";
                                 }
                             }
                             else

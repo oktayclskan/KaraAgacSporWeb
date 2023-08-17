@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KaraagacSporWebb
+namespace KaraagacSporWebb.AdminPanel
 {
 
 
-    public partial class blog
+    public partial class NewsList
     {
 
         /// <summary>
-        /// rp_news control.
+        /// lv_News control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_news;
+        protected global::System.Web.UI.WebControls.ListView lv_News;
     }
 }

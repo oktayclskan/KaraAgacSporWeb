@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-9 mx-auto text-center">
-            <h1 class="text-white">Contact</h1>
+            <h1 class="text-white">İletişim</h1>
           </div>
         </div>
       </div>
@@ -16,37 +16,43 @@
         <div class="row">
           <div class="col-lg-7">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name">
+                  <div class="row">
+                      <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="İsim">
+                      </div>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control" placeholder="Soyisim">
+                      </div>
+                  </div>
+              
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" placeholder="E-Posta">
+              </div>
+           
+              <div class="form-group">
+                <textarea name="" class="form-control" id="" cols="30" rows="10" placeholder="Mesajınız..."></textarea>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" class="form-control" id="" cols="30" rows="10" placeholder="Write something..."></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-primary py-3 px-5" value="Send Message">
+                <input type="submit" class="btn btn-primary py-3 px-5 d-block w-100" value="Gönder">
               </div>
           </div>
           <div class="col-lg-4 ml-auto">
             
             <ul class="list-unstyled">
               <li class="mb-2">
-                <strong class="text-white d-block">Address</strong>
-                273 South Riverview Rd. <br> New York, NY 10011
+                <strong class="text-white d-block">ADRES</strong>
+                273 XXXXXXXw Cd. <br> Eskişehir, No 10011
               </li>
               <li class="mb-2">
-                <strong class="text-white d-block">Email</strong>
-                <a href="#">info@unslate.co</a>
+                <strong class="text-white d-block">E-POSTA</strong>
+                <a href="#">XXXXXXX@GMAİL.coM</a>
               </li>
               <li class="mb-2">
                 <strong class="text-white d-block">
                   Phone
                 </strong>
-                <a href="#">+12 345 6789 012</a>
+                <a href="#">054X XXX XX XX</a>
               </li>
             </ul>
           </div>

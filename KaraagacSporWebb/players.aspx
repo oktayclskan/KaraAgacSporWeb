@@ -33,7 +33,7 @@
 
                 <asp:Repeater ID="rp_players" runat="server">
                     <ItemTemplate>
-                        <div class="item">
+                        <div class="item m-1">
                             <div class="video-media">
                                 <img src="AdminPanel/Assets/Img/<%# Eval("PlayerImg") %>" alt="Image" class="img-fluid">
                                 <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center">

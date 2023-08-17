@@ -20,20 +20,26 @@
                         </div>
                     </asp:Panel>
                     <div class="col">
+                        <h4 class="mt-3 text-secondary">İsim</h4>
                         <asp:TextBox ID="tb_name" CssClass="form-control mt-2" runat="server" placeholder="İsim"></asp:TextBox>
                         <div>
+                            <h4 class="mt-3 text-secondary">Soyisim</h4>
                             <asp:TextBox ID="tb_surname" TextMode="MultiLine" CssClass="form-control  mt-2" runat="server" placeholder="Soyisim"></asp:TextBox>
                         </div>
                          <div>
+                             <h4 class="mt-3 text-secondary">Doğum Tarihi</h4>
                             <asp:TextBox ID="tb_dateOfBirth" TextMode="DateTime" CssClass="form-control  mt-2" runat="server" placeholder="Doğum Tarihi"></asp:TextBox>
                         </div>
                          <div>
+                             <h4 class="mt-3 text-secondary">Forma Numarası</h4>
                             <asp:TextBox ID="tb_uniformNumber" TextMode="Number" CssClass="form-control  mt-2" runat="server" placeholder="Forma Numarası"></asp:TextBox>
                         </div>
                          <div>
+                             <h4 class="mt-3 text-secondary">Mevki</h4>
                             <asp:TextBox ID="tb_position" CssClass="form-control  mt-2" runat="server" placeholder="Mevki"></asp:TextBox>
                         </div>
                          <div class="mt-3">
+
                              <asp:CheckBox ID="tb_firtEleven" CssClass="mt-2" runat="server" />
                              <span>İlk 11</span>
 

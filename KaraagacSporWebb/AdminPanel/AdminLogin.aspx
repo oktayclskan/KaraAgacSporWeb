@@ -20,7 +20,6 @@
                     <asp:Panel ID="pnl_error" runat="server" Visible="false">
                         <div class="alert alert-danger" role="alert">
                             <asp:Label ID="lbl_eror" runat="server">
-                                sadasdasdasdasdasd
                             </asp:Label>
                         </div>
                     </asp:Panel>
@@ -31,7 +30,7 @@
                         <asp:TextBox ID="tb_password" runat="server" CssClass="form-control" Text="Şifre"></asp:TextBox>
                     </div>
                     <div class="form-group mt-3">
-                        <asp:LinkButton ID="lbtn_Login" runat="server" CssClass="btn btn-success d-block mt-2">Giriş Yap</asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_Login" runat="server" CssClass="btn btn-success d-block mt-2" OnClick="lbtn_Login_Click">Giriş Yap</asp:LinkButton>
                     </div>
                 </div>
 

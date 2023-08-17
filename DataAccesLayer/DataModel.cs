@@ -16,6 +16,54 @@ namespace DataAccesLayer
             cmd = con.CreateCommand();
         }
 
+        #region AdminLogin
+
+        public Admin AdminLogin(string mail, string adminPaswword)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Count(*) From Admins Where Mail=@mail AND AdminPassword=@adminPaswword ";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@mail", mail);
+                cmd.Parameters.AddWithValue("@adminPaswword", adminPaswword);
+                con.Open();
+                int num = Convert.ToInt32(cmd.ExecuteScalar());
+                if (num > 0)
+                {
+                    cmd.CommandText = "SELECT * From Admins WHERE Mail=@mail AND AdminPassword=@adminPassword";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@mail", mail);
+                    cmd.Parameters.AddWithValue("@adminPaswword", adminPaswword);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    Admin a = new Admin();
+
+                    while (reader.Read())
+                    {
+                        a.ID = reader.GetInt32(0);
+                        a.Name = reader.GetString(1);
+                        a.Surname = reader.GetString(2);
+                        a.Mail = reader.GetString(3);
+                        a.Password = reader.GetString(4);
+                    }
+                    return a;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch 
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        #endregion
+
         #region Matches
         //public List<Matches> MatchesList()
         //{
@@ -237,7 +285,134 @@ namespace DataAccesLayer
         #endregion
 
         #region News
-
+        public List<News> NewsList()
+        {
+            List<News> news = new List<News>();
+            try
+            {
+                cmd.CommandText = "Select * From News";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    News n = new News();
+                    n.ID = reader.GetInt32(0);
+                    n.NewsTitle = reader.GetString(1);
+                    n.NewsDescription = reader.GetString(2);
+                    n.NewsContent = reader.GetString(3);
+                    n.NewsDate = reader.GetDateTime(4);
+                    n.NewsDateStr = reader.GetDateTime(4).ToShortDateString();
+                    n.NewsCardImg = reader.GetString(5);
+                    n.NewsContentImg = reader.GetString(6);
+                    news.Add(n);
+                }
+                return news;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public News NewsGet(int id)
+        {
+            try
+            {
+                cmd.CommandText = "Select ID,Title,DescriptionNews,Content,CardImg,ContentImg From News Where ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                News n = new News();
+                while (reader.Read())
+                {
+                    n.ID = reader.GetInt32(0);
+                    n.NewsTitle = reader.GetString(1);
+                    n.NewsDescription = reader.GetString(2);
+                    n.NewsContent = reader.GetString(3);
+                    n.NewsCardImg = reader.GetString(4);
+                    n.NewsContentImg = reader.GetString(5);
+                }
+                return n;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+        public bool NewsAdd(News n)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO News (Title,DescriptionNews,Content,NewsDate,CardImg,ContentImg) VALUES (@title,@descripton,@content,@newsDate,@cardImg,@contentImg)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@title",n.NewsTitle);
+                cmd.Parameters.AddWithValue("@descripton", n.NewsDescription);
+                cmd.Parameters.AddWithValue("@content", n.NewsContent);
+                cmd.Parameters.AddWithValue("@newsDate", n.NewsDate);
+                cmd.Parameters.AddWithValue("@cardImg", n.NewsCardImg);
+                cmd.Parameters.AddWithValue("@contentImg", n.NewsContentImg);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+          
+        }
+        public bool NewsDlt(int id)
+        {
+            try
+            {
+                cmd.CommandText = "Delete News Where ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+        public bool NewsUpdate(News n)
+        {
+            try
+            {
+                cmd.CommandText = "Update News Set Title=@title,DescriptionNews=@description,Content=@content,CardImg=@cardImg,ContentImg=@contentImg WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id",n.ID);
+                cmd.Parameters.AddWithValue("@title",n.NewsTitle);
+                cmd.Parameters.AddWithValue("@description", n.NewsDescription);
+                cmd.Parameters.AddWithValue("@content", n.NewsContent);
+                cmd.Parameters.AddWithValue("@cardImg", n.NewsCardImg);
+                cmd.Parameters.AddWithValue("@contentImg", n.NewsContentImg);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         #endregion
 
         #region MatchDetail
@@ -428,11 +603,36 @@ namespace DataAccesLayer
             finally { con.Close(); }
         }
 
-
         #endregion
 
         #region Card
-
+        public List<Card> CardList()
+        {
+            List<Card> cards = new List<Card>();
+            try
+            {
+                cmd.CommandText = "Select * From Card";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Card c = new Card();
+                    c.ID = reader.GetInt32(0);
+                    c.CardName = reader.GetString(1);
+                    cards.Add(c);
+                }
+                return cards;
+            }
+            catch 
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         #endregion
     }
 }
