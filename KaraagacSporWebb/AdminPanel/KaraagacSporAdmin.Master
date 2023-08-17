@@ -30,10 +30,11 @@
 
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="NewsList.aspx">Haberler &nbsp  <i class="fa-solid fa-newspaper text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="AboutUsList.aspx">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end side-icon-color"></i></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">İletişim &nbsp <i class="fa-solid fa-tty text-primary float-end side-icon-color"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Adminler &nbsp <i class="fa-solid fa-user-lock float-end side-icon-color" ></i></a>
                         </div>
-                        <div>
-                             <asp:Label ID="lb_loginName" runat="server"></asp:Label>
+                        <div class="m-5">
+                            <h4 class="p-2">Admin</h4>
+                             <asp:Label ID="lb_loginName" CssClass="text-danger" runat="server"></asp:Label>
                         </div>
                     </div>
                     <!-- Page content wrapper-->
