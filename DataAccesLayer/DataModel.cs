@@ -112,7 +112,7 @@ namespace DataAccesLayer
             List<Matches> matches = new List<Matches>();
             try
             {
-                cmd.CommandText = "SELECT m.ID, m.MatchDateTime, m.MyTeam, ot.Name,m.MyTeamScore,m.OpposingTeamScore, md.Time, md.Goal, c.Name, p.Name, ot.Logo FROM Matches as m JOIN OpposingTeam AS ot ON ot.ID = m.OpposingTeamID JOIN MatchDetail AS md ON md.MatchID = m.ID JOIN Card AS c ON c.ID = md.CardID JOIN Players AS p ON p.ID = md.PlayerID";
+                cmd.CommandText = "Select m.ID, s.Name,ot.Name,m.MyTeamScore,m.OpposingTeamScore,ot.Logo,m.StadiumOwner,m.MatchDateTime\r\nFrom Matches as m\r\nJoin Stadiums AS s On s.ID=m.StadiumID\r\njoin OpposingTeam AS ot On ot.ID=m.OpposingTeamID\r\n";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -120,16 +120,15 @@ namespace DataAccesLayer
                 {
                     Matches m = new Matches();
                     m.ID = reader.GetInt32(0);
-                    m.MatchDateTime = reader.GetDateTime(1);
-                    m.MyTeam = reader.GetString(2);
-                    m.OpposingTeamName = reader.GetString(3);
-                    m.MyTeamScore = reader.GetInt32(4);
-                    m.OpposingTeamScore = reader.GetInt32(5);
-                    m.MatchDetailTime = reader.GetString(6);
-                    m.Goal = reader.GetBoolean(7);
-                    m.CardName = reader.GetString(8);
-                    m.PlayerName = reader.GetString(9);
-                    m.OpposingTeamLogo = reader.GetString(10);
+                    m.StadiumName=reader.GetString(1);
+                    m.OpposingTeamName = reader.GetString(2);
+                    m.MyTeamScore = reader.GetInt32(3);
+                    m.OpposingTeamScore= reader.GetInt32(4);
+                    m.OppesingTeamLogo= reader.GetString(5);
+                    m.StadiumOwner=reader.GetBoolean(6);
+                    m.StadiumOwnerStr=reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
+                    m.MatchDateTime = reader.GetDateTime(7);
+                    m.MatchDateTimeStr = reader.GetDateTime(7).ToShortDateString();
                     matches.Add(m);
                 }
                 return matches;
@@ -137,6 +136,42 @@ namespace DataAccesLayer
             catch
             {
                 return null;
+            }
+            finally { con.Close(); }
+        }
+        public bool MatchAdd(Matches m)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Matches (StadiumID,OpposingTeamID,MyTeamScore,OpposingTeamScore,StadiumOwner,MatchDateTime) Values(@stadiumID,@opposingTeamID,@myTeamScore,@opposingTeamScore,@stadiumOwner,@matchDateTime)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@stadiumID",m.StadiumID);
+                cmd.Parameters.AddWithValue("@opposingTeamID", m.OpposingTeamID);
+                cmd.Parameters.AddWithValue("@myTeamScore", m.MyTeamScore);
+                cmd.Parameters.AddWithValue("@opposingTeamScore", m.OpposingTeamScore);
+                cmd.Parameters.AddWithValue("@stadiumOwner", m.StadiumOwner);
+                cmd.Parameters.AddWithValue("@matchDateTime", m.MatchDateTime);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch { return false; }
+            finally { con.Close(); }
+        }
+        public bool MatchDlt(int id)
+        {
+            try
+            {
+                cmd.CommandText = "Delete Matches Where ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
             finally { con.Close(); }
         }
@@ -420,40 +455,13 @@ namespace DataAccesLayer
         #endregion
 
         #region OpposingTeam
-        public List<OpposingTeam> OpposingTeamsList()
-        {
-            List<OpposingTeam> opposingTeams = new List<OpposingTeam>();
-            try
-            {
-                cmd.CommandText = "Select * From OpposingTeam";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    OpposingTeam ot = new OpposingTeam();
-                    ot.ID = reader.GetInt32(0);
-                    ot.OpposingTeamName = reader.GetString(1);
-                    ot.OpposingTeamLogo = reader.GetString(2);
-                    opposingTeams.Add(ot);
-                }
-                return opposingTeams;
-            }
-            catch
-            {
-                return null;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+       
         #endregion
 
         #region Stadium
-        public List<Stadiums> StadiumList()
+        public List<Stadium> StadiumList()
         {
-            List<Stadiums> stadiums = new List<Stadiums>();
+            List<Stadium> stadiums = new List<Stadium>();
             try
             {
                 cmd.CommandText = ("Select * From Stadiums");
@@ -462,7 +470,7 @@ namespace DataAccesLayer
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Stadiums st = new Stadiums();
+                    Stadium st = new Stadium();
                     st.ID = reader.GetInt32(0);
                     st.StadiumName = reader.GetString(1);
                     st.StadiumCity = reader.GetString(2);
@@ -479,6 +487,31 @@ namespace DataAccesLayer
             {
                 con.Close();
             }
+        }
+        public List<OpposingTeam> OpposingTeamList()
+        {
+            List<OpposingTeam> opposingTeams = new List<OpposingTeam>();
+            try
+            {
+                cmd.CommandText = ("Select * From OpposingTeam");
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    OpposingTeam ot= new OpposingTeam();
+                    ot.ID = reader.GetInt32(0);
+                    ot.Name  = reader.GetString(1);
+                    ot.logo = reader.GetString(2);
+                    opposingTeams.Add(ot);
+                }
+                return opposingTeams;
+            }
+            catch 
+            {
+                return null;
+            }
+            finally { con.Close(); }
         }
         #endregion
 

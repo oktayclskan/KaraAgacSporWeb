@@ -19,7 +19,13 @@ namespace KaraagacSporWebb.AdminPanel
 
         protected void lv_Matches_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-
+            if (e.CommandName == "dlt")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                dm.MatchDlt(id);
+            }
+            lv_Matches.DataSource = dm.MatchesList();
+            lv_Matches.DataBind();
         }
     }
 }

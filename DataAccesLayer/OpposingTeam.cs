@@ -9,7 +9,7 @@ namespace DataAccesLayer
     public class OpposingTeam
     {
         public int ID { get; set; }
-        public string OpposingTeamName { get; set; }
-        public string OpposingTeamLogo { get; set; }
+        public string Name { get; set; }
+        public string logo { get; set; }
     }
 }

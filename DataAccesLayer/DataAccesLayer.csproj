@@ -52,7 +52,7 @@
     <Compile Include="OpposingTeam.cs" />
     <Compile Include="Players.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stadiums.cs" />
+    <Compile Include="Stadium.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

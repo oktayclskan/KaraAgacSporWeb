@@ -2161,7 +2161,9 @@
     <Content Include="AdminPanel\Assets\js\scripts.js" />
     <Content Include="AdminPanel\Default.aspx" />
     <Content Include="AdminPanel\HomePage.aspx" />
+    <Content Include="AdminPanel\MatchAdd.aspx" />
     <Content Include="AdminPanel\MatchesList.aspx" />
+    <Content Include="AdminPanel\MatchUpdate.aspx" />
     <Content Include="AdminPanel\NewsAdd.aspx" />
     <Content Include="AdminPanel\NewsList.aspx" />
     <Content Include="AdminPanel\NewsUpdate.aspx" />
@@ -2237,6 +2239,7 @@
     <Content Include="contact.aspx" />
     <Content Include="index.aspx" />
     <Content Include="matches.aspx" />
+    <Content Include="MatchseRead.aspx" />
     <Content Include="players.aspx" />
     <Content Include="single.aspx" />
     <Content Include="Web.config" />
@@ -2298,12 +2301,26 @@
     <Compile Include="AdminPanel\KaraagacSporAdmin.Master.designer.cs">
       <DependentUpon>KaraagacSporAdmin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\MatchAdd.aspx.cs">
+      <DependentUpon>MatchAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\MatchAdd.aspx.designer.cs">
+      <DependentUpon>MatchAdd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\MatchesList.aspx.cs">
       <DependentUpon>MatchesList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPanel\MatchesList.aspx.designer.cs">
       <DependentUpon>MatchesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\MatchUpdate.aspx.cs">
+      <DependentUpon>MatchUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\MatchUpdate.aspx.designer.cs">
+      <DependentUpon>MatchUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\NewsAdd.aspx.cs">
       <DependentUpon>NewsAdd.aspx</DependentUpon>
@@ -2381,6 +2398,13 @@
     </Compile>
     <Compile Include="matches.aspx.designer.cs">
       <DependentUpon>matches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MatchseRead.aspx.cs">
+      <DependentUpon>MatchseRead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MatchseRead.aspx.designer.cs">
+      <DependentUpon>MatchseRead.aspx</DependentUpon>
     </Compile>
     <Compile Include="players.aspx.cs">
       <DependentUpon>players.aspx</DependentUpon>
