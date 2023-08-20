@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   
     <div class="container">
         <div class="row">
             <div class="col-sm-10">
@@ -24,7 +25,20 @@
                             <asp:TextBox ID="tb_surname" CssClass="form-control  mt-2" runat="server" placeholder="Soyisim"></asp:TextBox>
                         </div>
                         <div>
-                            <asp:TextBox ID="tb_dateOfBirth" TextMode="DateTime" CssClass="form-control  mt-2" runat="server" placeholder="Doğum Tarihi"></asp:TextBox>
+                            <section class="container">
+                                <h2 class="py-2">Datepicker in Bootstrap 5</h2>
+                                <label for="date" class="col-1 col-form-label">Date</label>
+                                <div class="col-5">
+                                    <div class="input-group date">
+                                        <asp:TextBox ID="tb_dateOfBirth" runat="server"></asp:TextBox>
+                                        <span class="input-group-append">
+                                            <span class="input-group-text bg-light d-block">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                         <div>
                             <asp:TextBox ID="tb_uniformNumber" TextMode="Number" CssClass="form-control mt-2" runat="server" placeholder="Forma Numarası"></asp:TextBox>
@@ -55,5 +69,12 @@
             </div>
         </div>
     </div>
-
+     <style>
+        .input-group-append {
+            cursor: pointer;
+        }
+    </style>
+    <script>$(function () {
+            $('#datepicker').datepicker();
+        });</script>
 </asp:Content>
