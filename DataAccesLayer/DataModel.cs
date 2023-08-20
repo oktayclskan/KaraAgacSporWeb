@@ -52,7 +52,7 @@ namespace DataAccesLayer
                     return null;
                 }
             }
-            catch 
+            catch
             {
                 return null;
             }
@@ -112,7 +112,7 @@ namespace DataAccesLayer
             List<Matches> matches = new List<Matches>();
             try
             {
-                cmd.CommandText = "Select m.ID, s.Name,ot.Name,m.MyTeamScore,m.OpposingTeamScore,ot.Logo,m.StadiumOwner,m.MatchDateTime\r\nFrom Matches as m\r\nJoin Stadiums AS s On s.ID=m.StadiumID\r\njoin OpposingTeam AS ot On ot.ID=m.OpposingTeamID\r\n";
+                cmd.CommandText = "SELECT m.ID, s.Name, ot.Name, m.MyTeamScore, m.OpposingTeamScore, ot.Logo, m.StadiumOwner, m.MatchDateTime\r\nFROM Matches AS m\r\nJOIN Stadiums AS s ON s.ID = m.StadiumID\r\nJOIN OpposingTeam AS ot ON ot.ID = m.OpposingTeamID\r\nORDER BY \r\n    CASE\r\n        WHEN m.MyTeamScore IS NULL AND m.OpposingTeamScore IS NULL THEN 0\r\n        WHEN m.MyTeamScore IS NULL THEN 1\r\n        WHEN m.OpposingTeamScore IS NULL THEN 2\r\n        ELSE 3\r\n    END,\r\n    m.ID DESC;";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -120,13 +120,19 @@ namespace DataAccesLayer
                 {
                     Matches m = new Matches();
                     m.ID = reader.GetInt32(0);
-                    m.StadiumName=reader.GetString(1);
+                    m.StadiumName = reader.GetString(1);
                     m.OpposingTeamName = reader.GetString(2);
-                    m.MyTeamScore = reader.GetInt32(3);
-                    m.OpposingTeamScore= reader.GetInt32(4);
-                    m.OppesingTeamLogo= reader.GetString(5);
-                    m.StadiumOwner=reader.GetBoolean(6);
-                    m.StadiumOwnerStr=reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
+                    if (!reader.IsDBNull(3))
+                    {
+                        m.MyTeamScore = reader.GetInt32(3);
+                    }
+                    if (!reader.IsDBNull(4))
+                    {
+                        m.OpposingTeamScore = reader.GetInt32(4);
+                    }
+                    m.OppesingTeamLogo = reader.GetString(5);
+                    m.StadiumOwner = reader.GetBoolean(6);
+                    m.StadiumOwnerStr = reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
                     m.MatchDateTime = reader.GetDateTime(7);
                     m.MatchDateTimeStr = reader.GetDateTime(7).ToShortDateString();
                     matches.Add(m);
@@ -145,7 +151,7 @@ namespace DataAccesLayer
             {
                 cmd.CommandText = "INSERT INTO Matches (StadiumID,OpposingTeamID,MyTeamScore,OpposingTeamScore,StadiumOwner,MatchDateTime) Values(@stadiumID,@opposingTeamID,@myTeamScore,@opposingTeamScore,@stadiumOwner,@matchDateTime)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@stadiumID",m.StadiumID);
+                cmd.Parameters.AddWithValue("@stadiumID", m.StadiumID);
                 cmd.Parameters.AddWithValue("@opposingTeamID", m.OpposingTeamID);
                 cmd.Parameters.AddWithValue("@myTeamScore", m.MyTeamScore);
                 cmd.Parameters.AddWithValue("@opposingTeamScore", m.OpposingTeamScore);
@@ -386,7 +392,7 @@ namespace DataAccesLayer
             {
                 cmd.CommandText = "INSERT INTO News (Title,DescriptionNews,Content,NewsDate,CardImg,ContentImg) VALUES (@title,@descripton,@content,@newsDate,@cardImg,@contentImg)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@title",n.NewsTitle);
+                cmd.Parameters.AddWithValue("@title", n.NewsTitle);
                 cmd.Parameters.AddWithValue("@descripton", n.NewsDescription);
                 cmd.Parameters.AddWithValue("@content", n.NewsContent);
                 cmd.Parameters.AddWithValue("@newsDate", n.NewsDate);
@@ -404,7 +410,7 @@ namespace DataAccesLayer
             {
                 con.Close();
             }
-          
+
         }
         public bool NewsDlt(int id)
         {
@@ -429,8 +435,8 @@ namespace DataAccesLayer
             {
                 cmd.CommandText = "Update News Set Title=@title,DescriptionNews=@description,Content=@content,CardImg=@cardImg,ContentImg=@contentImg WHERE ID=@id";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id",n.ID);
-                cmd.Parameters.AddWithValue("@title",n.NewsTitle);
+                cmd.Parameters.AddWithValue("@id", n.ID);
+                cmd.Parameters.AddWithValue("@title", n.NewsTitle);
                 cmd.Parameters.AddWithValue("@description", n.NewsDescription);
                 cmd.Parameters.AddWithValue("@content", n.NewsContent);
                 cmd.Parameters.AddWithValue("@cardImg", n.NewsCardImg);
@@ -455,7 +461,7 @@ namespace DataAccesLayer
         #endregion
 
         #region OpposingTeam
-       
+
         #endregion
 
         #region Stadium
@@ -499,15 +505,15 @@ namespace DataAccesLayer
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    OpposingTeam ot= new OpposingTeam();
+                    OpposingTeam ot = new OpposingTeam();
                     ot.ID = reader.GetInt32(0);
-                    ot.Name  = reader.GetString(1);
+                    ot.Name = reader.GetString(1);
                     ot.logo = reader.GetString(2);
                     opposingTeams.Add(ot);
                 }
                 return opposingTeams;
             }
-            catch 
+            catch
             {
                 return null;
             }
@@ -657,7 +663,7 @@ namespace DataAccesLayer
                 }
                 return cards;
             }
-            catch 
+            catch
             {
                 return null;
             }
