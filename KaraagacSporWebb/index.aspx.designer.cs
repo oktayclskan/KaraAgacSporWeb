@@ -15,12 +15,21 @@ namespace KaraagacSporWebb
     {
 
         /// <summary>
-        /// rp_matchDetail control.
+        /// rp_Lastmatch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_matchDetail;
+        protected global::System.Web.UI.WebControls.Repeater rp_Lastmatch;
+
+        /// <summary>
+        /// rp_news control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_news;
     }
 }

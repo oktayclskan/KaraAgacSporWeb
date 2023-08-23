@@ -33,7 +33,7 @@
                             <div class="text">
                                 <span class="meta"><%# Eval("NewsDateStr") %></span>
                                 <h3 class="mb-4"><a href="#"><%#Eval("NewsTitle") %></a></h3>
-                                <p style="height:200px"><%#Eval("NewsDescription") %></p>
+                                <p style="height: 200px"><%#Eval("NewsDescription") %></p>
                                 <p><a href="#">Devamı</a></p>
                             </div>
                         </div>
@@ -55,20 +55,6 @@
             </div>
           </div>
         </div>--%>
-
-
-
-        <div class="row justify-content-center">
-            <div class="col-lg-7 text-center">
-                <div class="custom-pagination">
-                    <a href="#">1</a>
-                    <span>2</span>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                </div>
-            </div>
-        </div>
     </div>
 
 </asp:Content>

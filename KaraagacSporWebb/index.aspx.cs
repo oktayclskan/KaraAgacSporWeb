@@ -13,8 +13,10 @@ namespace KaraagacSporWebb
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            rp_matchDetail.DataSource = dm.MatchesList();
-            rp_matchDetail.DataBind();
+            rp_Lastmatch.DataSource = dm.MatchesListLast();
+            rp_Lastmatch.DataBind();
+            rp_news.DataSource = dm.NewsList();
+            rp_news.DataBind();
         }
     }
 }

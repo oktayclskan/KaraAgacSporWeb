@@ -49,8 +49,10 @@
     <Compile Include="MatchDetail.cs" />
     <Compile Include="Matches.cs" />
     <Compile Include="News.cs" />
+    <Compile Include="NextMatch.cs" />
     <Compile Include="OpposingTeam.cs" />
     <Compile Include="Players.cs" />
+    <Compile Include="PointFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stadium.cs" />
   </ItemGroup>

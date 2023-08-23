@@ -60,33 +60,6 @@ namespace KaraagacSporWebb.AdminPanel
         protected global::System.Web.UI.WebControls.TextBox tb_content;
 
         /// <summary>
-        /// fu_img1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_img1;
-
-        /// <summary>
-        /// fu_img2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_img2;
-
-        /// <summary>
-        /// fu_img3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_img3;
-
-        /// <summary>
         /// btn_aboutUsAdd control.
         /// </summary>
         /// <remarks>

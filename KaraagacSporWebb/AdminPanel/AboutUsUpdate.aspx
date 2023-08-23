@@ -24,33 +24,10 @@
                         <asp:TextBox ID="tb_title" CssClass="form-control mt-2" runat="server" placeholder="Baslik"></asp:TextBox>
                         <div>
                             <h4 class="mt-3 text-secondary">İçerik</h4>
-                            <asp:TextBox ID="tb_content" TextMode="MultiLine" CssClass="form-control  mt-2" runat="server" placeholder="içerik"></asp:TextBox>
+                            <asp:TextBox ID="tb_content" TextMode="MultiLine" CssClass="form-control  mt-2 p-3" runat="server" placeholder="içerik"></asp:TextBox>
                         </div>
-                        <div>
-                            <div class="mb-3 mt-2">
-                                <asp:Image ID="asp_img" runat="server" Width="150" />
-                            </div>
-                            <span>Resim seçiniz</span>
-                            <asp:FileUpload ID="fu_img1" runat="server" CssClass="form-control form-control-sm" />
-
-                            <div class="mb-3 mt-2">
-                                <asp:Image ID="asp_img2" runat="server" Width="150" />
-                            </div>
-                            <div class="">
-                                <label class="form-label">Resim Seciniz</label>
-                                <asp:FileUpload ID="fu_img2" runat="server" CssClass="form-control form-control-sm" />
-                            </div>
-
-                            <div class="mb-3 mt-2">
-                                <asp:Image ID="asp_img3" runat="server" Width="150" />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Resim Seciniz</label>
-                                <asp:FileUpload ID="fu_img3" runat="server" CssClass="form-control form-control-sm" />
-                            </div>
-                            <div class="mb-3">
-                                <asp:LinkButton ID="btn_aboutUsUpdate" runat="server" CssClass="btn btn-success d-block" OnClick="btn_aboutUsUpdate_Click">Güncelle</asp:LinkButton>
-                            </div>
+                        <div class="mb-3 mt-3">
+                            <asp:LinkButton ID="btn_aboutUsUpdate" runat="server" CssClass="btn btn-success d-block" OnClick="btn_aboutUsUpdate_Click">Güncelle</asp:LinkButton>
                         </div>
                     </div>
                 </div>

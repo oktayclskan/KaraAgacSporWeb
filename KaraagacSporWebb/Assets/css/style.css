@@ -683,6 +683,19 @@ h1, h2, h3, h4, h5,
     font-weight: 700;
     z-index: 2;
     letter-spacing: .2em; }
+    .team-vs .scoreTitle {
+        position: absolute;
+        top: 10%;
+        left: 48%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        z-index: 2;
+        letter-spacing: .2em;
+    }
     @media (max-width: 991.98px) {
       .team-vs .score {
         font-size: 2rem;

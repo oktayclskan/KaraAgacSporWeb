@@ -2168,6 +2168,7 @@
     <Content Include="AdminPanel\NewsAdd.aspx" />
     <Content Include="AdminPanel\NewsList.aspx" />
     <Content Include="AdminPanel\NewsUpdate.aspx" />
+    <Content Include="AdminPanel\OpposingTeamList.aspx" />
     <Content Include="AdminPanel\PlayerAdd.aspx" />
     <Content Include="AdminPanel\PlayerList.aspx" />
     <Content Include="AdminPanel\PlayerUpdate.aspx" />
@@ -2350,6 +2351,13 @@
     </Compile>
     <Compile Include="AdminPanel\NewsUpdate.aspx.designer.cs">
       <DependentUpon>NewsUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\OpposingTeamList.aspx.cs">
+      <DependentUpon>OpposingTeamList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\OpposingTeamList.aspx.designer.cs">
+      <DependentUpon>OpposingTeamList.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\PlayerAdd.aspx.cs">
       <DependentUpon>PlayerAdd.aspx</DependentUpon>
