@@ -60,7 +60,7 @@
                             <div class="team-1 w-50">
                                 <div class="team-details w-100 text-center">
                                     <img src="Assets/images/karaagac-logo.png" alt="Image" class="img-fluid">
-                                    <h3 class="mt-2"><%# Eval("MyTeamName") %></h3>
+                                    <h3 class="mt-2">Kara Ağaç Spor</h3>
                                 </div>
                             </div>
                             <div class="team-2 w-50">

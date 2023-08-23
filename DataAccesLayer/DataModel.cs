@@ -112,29 +112,23 @@ namespace DataAccesLayer
             List<Matches> matches = new List<Matches>();
             try
             {
-                cmd.CommandText = "SELECT m.ID, s.Name, ot.Name, m.MyTeamScore, m.OpposingTeamScore, ot.Logo, m.StadiumOwner, m.MatchDateTime\r\nFROM Matches AS m\r\nJOIN Stadiums AS s ON s.ID = m.StadiumID\r\nJOIN OpposingTeam AS ot ON ot.ID = m.OpposingTeamID\r\nORDER BY \r\n    CASE\r\n        WHEN m.MyTeamScore IS NULL AND m.OpposingTeamScore IS NULL THEN 0\r\n        WHEN m.MyTeamScore IS NULL THEN 1\r\n        WHEN m.OpposingTeamScore IS NULL THEN 2\r\n        ELSE 3\r\n    END,\r\n    m.ID DESC;";
+                cmd.CommandText = "Select m.ID, s.Name,ot.Name,ot.Logo,m.MyTeamScore,m.OpposingTeamScore,m.StadiumOwner,m.MatchDateTime\r\nFrom Matches AS m\r\njoin Stadiums AS s ON s.ID=m.StadiumID\r\njoin OpposingTeam AS ot ON ot.ID=m.OpposingTeamID";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     Matches m = new Matches();
-                    m.ID = reader.GetInt32(0);
+                    m.ID = reader.GetInt32(0); 
                     m.StadiumName = reader.GetString(1);
                     m.OpposingTeamName = reader.GetString(2);
-                    if (!reader.IsDBNull(3))
-                    {
-                        m.MyTeamScore = reader.GetInt32(3);
-                    }
-                    if (!reader.IsDBNull(4))
-                    {
-                        m.OpposingTeamScore = reader.GetInt32(4);
-                    }
-                    m.OppesingTeamLogo = reader.GetString(5);
-                    m.StadiumOwner = reader.GetBoolean(6);
+                    m.OppesingTeamLogo=reader.GetString(3);
+                    m.MyTeamScore = reader.GetInt32(4);
+                    m.OpposingTeamScore=reader.GetInt32(5);
+                    m.StadiumOwner=reader.GetBoolean(6);
                     m.StadiumOwnerStr = reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
                     m.MatchDateTime = reader.GetDateTime(7);
-                    m.MatchDateTimeStr = reader.GetDateTime(7).ToShortDateString();
+
                     matches.Add(m);
                 }
                 return matches;
@@ -458,7 +452,58 @@ namespace DataAccesLayer
         #endregion
 
         #region MatchDetail
+        //public List<MatchDetail> MatchDetailsList()
+        //{
+        //    List<MatchDetail>matchDetails = new List<MatchDetail>();
+        //    try
+        //    {
+        //        cmd.CommandText = "Select m.OpposingTeamID,p.Name,md.Goal,md.GoalTime,c.Name,md.CardTime\r\nFrom MatchDetail AS md\r\njoin Matches AS m ON md.MatchID=m.ID\r\njoin Players AS p ON md.PlayerID=m.ID\r\njoin Cards AS c ON md.CardID=c.ID";
+        //        cmd.Parameters.Clear();
+        //        con.Open();
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            MatchDetail md = new MatchDetail();
+        //            md.
+        //        }
+        //    }
+        //    catch { return null; }
+        //    finally { con.Close(); }
+        //}
 
+        public List<MatchDetail> MatchDetailsList()
+        {
+            List<MatchDetail> matchDetailsList = new List<MatchDetail>();
+            try
+            {
+                cmd.CommandText = "Select md.ID,c.Name,p.Name,md.MyTeamGoal,md.MyTeamTime,md.OpposingTeamPlayerName,md.OpposingTeamGoal,md.OpposingTeamTime\r\nFrom MatchDetails AS md\r\njoin Cards AS c ON c.ID=md.CardID\r\njoin Players AS p ON p.ID=md.PlayerID";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    MatchDetail md = new MatchDetail();
+                    md.ID = reader.GetInt32(0);
+                    md.CardName = reader.GetString(1);
+                    md.PlayerName=reader.GetString(2);
+                    md.MyTeamGoal = reader.GetBoolean(3);
+                    md.MyTeamGoalStr = reader.GetBoolean(3) ? "<label style='color:green'>1 Gol</label>" : "<label style='color:red'>--</label>";
+                    md.MyTeamTime = reader.GetString(4);
+                    md.OpposingTeamPlayerName = reader.GetString(5);
+                    md.OpposingTeamGoal = reader.GetBoolean(6);
+                    md.OpposingTeamGoalStr = reader.GetBoolean(6) ? "<label style='color:green'>1 Gol</label>" : "<label style='color:red'>--</label>";
+                    md.OpposingTeamTime = reader.GetString(7);
+                    matchDetailsList.Add(md);
+
+                }
+                return matchDetailsList;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
         #endregion
 
         #region OpposingTeam

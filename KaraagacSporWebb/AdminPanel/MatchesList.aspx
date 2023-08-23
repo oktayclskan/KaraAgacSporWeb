@@ -13,12 +13,13 @@
                     <tr>
                         <td>ID</td>
                         <td>Stadyum Adı</td>
-                        <td class="text-center">Takım adı</td>
+                        <td class="text-center">Karşı Takım logo</td>
                         <td class="text-center">Karşı Takım Adı</td>
-                        <td class="text-center">Stadyum</td>
-                        <td class="text-center">Maç Tarihi</td>
                         <td class="text-center">Takım Logo</td>
-                        <td class="text-center">Karşı Takım Logo</td>
+                        <td class="text-center">Ev Sahibi</td>
+                        <td class="text-center">Maç Tarihi</td>
+                        <td class="text-center">Takım Skor</td>
+                        <td class="text-center">Karşı takım Skor</td>
                         <td colspan="2" class="text-center">Seçenekler</td>
                     </tr>
                     <tbody>
@@ -30,21 +31,26 @@
                 <tr>
                     <td class="p-2"><%# Eval("ID") %></td>
                     <td><%# Eval("StadiumName") %></td>
-                    <td class="text-center">Karaağac Spor</td>
+                    <td class="text-center">
+                        <img src="Assets/Img/<%#Eval("OppesingTeamLogo") %>" width="50" />
+                    </td>
                     <td class="text-center"><%# Eval("OpposingTeamName") %></td>
-                    <td class="text-center"><%# Eval("StadiumOwnerStr") %></td>
-                    <td class="text-center"><%# Eval("MatchDateTime") %></td>
+
                     <td class="text-center">
                         <img src="../Assets/images/karaagac-logo.png" width="50" />
                     </td>
-                    <td class="text-center">
-                       <img src="Assets/Img/<%#Eval("OppesingTeamLogo") %>"width="50"  />
-                    </td>
-                     <td>
-                            <a href="MatchUpdate.aspx?mid=<%# Eval("ID") %>" class="btn btn-success mt-4">Düzenle</a>
-                        </td>
+                    <td class="text-center"><%# Eval("StadiumOwnerStr") %></td>
+
+                    <td class="text-center"><%# Eval("MatchDateTime") %></td>
+
+                    <td class="text-center"><%# Eval("MyTeamScore") %></td>
+                    <td class="text-center"><%# Eval("OpposingTeamScore") %></td>
+
                     <td>
-                        <asp:LinkButton ID="lbtn_dlt" runat="server" CssClass="btn btn-danger mt-1" CommandArgument='<%# Eval("ID") %>' CommandName="dlt">Sil</asp:LinkButton>
+                        <a href="MatchUpdate.aspx?mid=<%# Eval("ID") %>" class="btn btn-success mt-3">Düzenle</a>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="lbtn_dlt" runat="server" CssClass="btn btn-danger mt-3" CommandArgument='<%# Eval("ID") %>' CommandName="dlt">Sil</asp:LinkButton>
                     </td>
                 </tr>
             </ItemTemplate>

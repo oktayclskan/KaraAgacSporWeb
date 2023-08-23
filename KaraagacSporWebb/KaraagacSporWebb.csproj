@@ -2162,6 +2162,7 @@
     <Content Include="AdminPanel\Default.aspx" />
     <Content Include="AdminPanel\HomePage.aspx" />
     <Content Include="AdminPanel\MatchAdd.aspx" />
+    <Content Include="AdminPanel\MatchDetailList.aspx" />
     <Content Include="AdminPanel\MatchesList.aspx" />
     <Content Include="AdminPanel\MatchUpdate.aspx" />
     <Content Include="AdminPanel\NewsAdd.aspx" />
@@ -2307,6 +2308,13 @@
     </Compile>
     <Compile Include="AdminPanel\MatchAdd.aspx.designer.cs">
       <DependentUpon>MatchAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\MatchDetailList.aspx.cs">
+      <DependentUpon>MatchDetailList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\MatchDetailList.aspx.designer.cs">
+      <DependentUpon>MatchDetailList.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\MatchesList.aspx.cs">
       <DependentUpon>MatchesList.aspx</DependentUpon>
