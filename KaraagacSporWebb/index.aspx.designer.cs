@@ -33,6 +33,15 @@ namespace KaraagacSporWebb
         protected global::System.Web.UI.WebControls.Repeater rp_news;
 
         /// <summary>
+        /// rp_nextMatchGet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_nextMatchGet;
+
+        /// <summary>
         /// rp_fixture control.
         /// </summary>
         /// <remarks>

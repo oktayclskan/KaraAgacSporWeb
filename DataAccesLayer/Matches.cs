@@ -15,10 +15,12 @@ namespace DataAccesLayer
         public string OpposingTeamName { get; set; }
         public string OppesingTeamLogo { get; set; }
         public int MyTeamScore { get; set; }
+        public string MyTeamScoreStr { get; set; }
         public int OpposingTeamScore { get; set; }
         public bool StadiumOwner { get; set; }
         public string StadiumOwnerStr { get; set; }
         public DateTime MatchDateTime { get; set; }
+        public DateTime Date { get; set; }
         public string MatchDateTimeStr { get; set; }
     }
 }

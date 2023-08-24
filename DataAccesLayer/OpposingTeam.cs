@@ -10,6 +10,7 @@ namespace DataAccesLayer
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public string MyTeam { get; set; }
         public string logo { get; set; }
     }
 }

@@ -17,10 +17,10 @@ namespace KaraagacSporWebb
             rp_Lastmatch.DataBind();
             rp_news.DataSource = dm.NewsList();
             rp_news.DataBind();
-            rp_fixture.DataSource=dm.PointFixtureList();
+            rp_fixture.DataSource = dm.PointFixtureList();
             rp_fixture.DataBind();
-
+            rp_nextMatchGet.DataSource = dm.NextMatchList();
+            rp_nextMatchGet.DataBind();
         }
-
     }
 }

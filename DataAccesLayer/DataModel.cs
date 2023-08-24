@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -112,7 +113,7 @@ namespace DataAccesLayer
             List<Matches> matches = new List<Matches>();
             try
             {
-                cmd.CommandText = "Select m.ID, s.Name,ot.Name,ot.Logo,m.MyTeamScore,m.OpposingTeamScore,m.StadiumOwner,m.MatchDateTime\r\nFrom Matches AS m\r\njoin Stadiums AS s ON s.ID=m.StadiumID\r\njoin OpposingTeam AS ot ON ot.ID=m.OpposingTeamID";
+                cmd.CommandText = "Select m.ID, s.Name,ot.Name,ot.Logo,m.MyTeamScore,m.OpposingTeamScore,m.StadiumOwner,m.MatchDateTime\r\nFrom Matches AS m\r\njoin Stadiums AS s ON s.ID=m.StadiumID\r\njoin OpposingTeam AS ot ON ot.ID=m.OpposingTeamID WHERE m.MyTeamScore > 0 AND m.OpposingTeamScore > 0 ";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -123,8 +124,8 @@ namespace DataAccesLayer
                     m.StadiumName = reader.GetString(1);
                     m.OpposingTeamName = reader.GetString(2);
                     m.OppesingTeamLogo = reader.GetString(3);
-                    m.MyTeamScore = reader.GetInt32(4);
-                    m.OpposingTeamScore = reader.GetInt32(5);
+                    m.MyTeamScore = !reader.IsDBNull(4) ? reader.GetInt32(4) : 0;
+                    m.OpposingTeamScore = !reader.IsDBNull(5) ? reader.GetInt32(5) : 0;
                     m.StadiumOwner = reader.GetBoolean(6);
                     m.StadiumOwnerStr = reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
                     m.MatchDateTime = reader.GetDateTime(7);
@@ -176,15 +177,14 @@ namespace DataAccesLayer
         {
             try
             {
-                cmd.CommandText = "INSERT INTO Matches (StadiumID,OpposingTeamID,MyTeamScore,OpposingTeamScore,StadiumOwner,MatchDateTime) Values(@stadiumID,@opposingTeamID,@myTeamScore,@opposingTeamScore,@stadiumOwner,@matchDateTime)";
+                cmd.CommandText = "INSERT INTO Matches (StadiumID,OpposingTeamID,StadiumOwner,MatchDateTime) Values(@stadiumID,@opposingTeamID,@stadiumOwner,@matchDateTime)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@stadiumID", m.StadiumID);
                 cmd.Parameters.AddWithValue("@opposingTeamID", m.OpposingTeamID);
-                cmd.Parameters.AddWithValue("@myTeamScore", m.MyTeamScore);
-                cmd.Parameters.AddWithValue("@opposingTeamScore", m.OpposingTeamScore);
                 cmd.Parameters.AddWithValue("@stadiumOwner", m.StadiumOwner);
                 cmd.Parameters.AddWithValue("@matchDateTime", m.MatchDateTime);
                 con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -924,26 +924,38 @@ namespace DataAccesLayer
 
         public List<NextMatch> NextMatchList()
         {
-            List<NextMatch> nextMatche = new List<NextMatch>();
+            List<NextMatch> nextMatches = new List<NextMatch>();
             try
             {
-                cmd.CommandText = "Select nm.ID, ot.Name,s.Name,nm.Date\r\nFrom NextMatch AS nm\r\njoin OpposingTeam AS ot ON nm.OpposingTeamID=ot.ID\r\njoin Stadiums AS s ON nm.StadiumID=s.ID";
+                cmd.CommandText = "SELECT TOP 1 nm.ID, ot.Name, s.Name, nm.Date, ot.Logo " +
+                                  "FROM NextMatch AS nm " +
+                                  "JOIN OpposingTeam AS ot ON nm.OpposingTeamID = ot.ID " +
+                                  "JOIN Stadiums AS s ON nm.StadiumID = s.ID " +
+                                  "WHERE nm.Date >= GETDATE() " + // Sadece gelecekteki tarihleri al
+                                  "ORDER BY nm.Date ASC"; // En yakın tarihten başlayarak sırala
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (reader.Read())
                 {
                     NextMatch nm = new NextMatch();
                     nm.ID = reader.GetInt32(0);
                     nm.OpposingTeamName = reader.GetString(1);
                     nm.StadiumName = reader.GetString(2);
                     nm.Date = reader.GetDateTime(3);
-                    nextMatche.Add(nm);
+                    nm.Logo = reader.GetString(4);
+                    nextMatches.Add(nm);
                 }
-                return nextMatche;
+                return nextMatches;
             }
-            catch { return null; }
-            finally { con.Close(); }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public bool NextMatchAdd(NextMatch nm)
         {

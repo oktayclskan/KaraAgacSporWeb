@@ -170,43 +170,43 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="widget-next-match">
-                        <div class="widget-title">
-                            <h3>Next Match</h3>
-                        </div>
-                        <div class="widget-body mb-3">
-                            <div class="widget-vs">
-                                <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
-                                    <div class="team-1 text-center">
-                                        <img src="Assets/images/logo_1.png" alt="Image" />
-                                        <h3>Football League</h3>
-                                    </div>
-                                    <div>
-                                        <span class="vs"><span>VS</span></span>
-                                    </div>
-                                    <div class="team-2 text-center">
-                                        <img src="Assets/images/logo_2.png" alt="Image">
-                                        <h3>Soccer</h3>
+                    <asp:Repeater ID="rp_nextMatchGet" runat="server">
+                        <ItemTemplate>
+                            <div class="widget-next-match">
+                                <div class="widget-title">
+                                    <h3>Sıradaki Maç</h3>
+                                </div>
+                                <div class="widget-body mb-3">
+                                    <div class="widget-vs">
+                                        <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                                            <div class="team-1 text-center">
+                                                <img src="Assets/images/karaagac-logo.png" alt="Image" />
+                                                <h3>KaraağaçSpor</h3>
+                                                <h3>Klübü</h3>
+                                            </div>
+                                            <div>
+                                                <span class="vs"><span>VS</span></span>
+                                            </div>
+                                            <div class="team-2 text-center">
+                                                <img src="AdminPanel/Assets/Img/<%# Eval("Logo") %>" alt="Image">
+                                                <h3><%# Eval ("OpposingTeamName") %></h3>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="text-center widget-vs-contents mb-4">
+                                    <h4>2. Amatör Ligi</h4>
+                                    <p class="mb-5">
+                                        <span class="d-block"><%# Eval("Date") %></span>
+                                        <strong class="text-primary"><%# Eval("StadiumName") %></strong>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="text-center widget-vs-contents mb-4">
-                            <h4>World Cup League</h4>
-                            <p class="mb-5">
-                                <span class="d-block">December 20th, 2020</span>
-                                <span class="d-block">9:30 AM GMT+0</span>
-                                <strong class="text-primary">New Euro Arena</strong>
-                            </p>
+                        </ItemTemplate>
+                    </asp:Repeater>
 
-                            <div id="date-countdown2" class="pb-1"></div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-6">
-
-
-
                     <div class="widget-next-match">
                         <table class="table custom-table">
                             <thead>
