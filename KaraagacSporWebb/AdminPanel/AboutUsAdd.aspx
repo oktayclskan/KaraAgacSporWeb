@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-sm-10">
                 <div class="row">
                     <h1>Ekle</h1>
@@ -23,9 +23,7 @@
                             <asp:TextBox ID="tb_content" TextMode="MultiLine" CssClass="form-control  mt-2" runat="server" placeholder="içerik"></asp:TextBox>
                         </div>
                         <div>
-                           
-
-                            <div class="mb-3">
+                            <div class="mb-3 mt-2">
                                 <asp:LinkButton ID="btn_aboutUsAdd" runat="server" CssClass="btn btn-success d-block" OnClick="btn_aboutUsAdd_Click">Ekle</asp:LinkButton>
                             </div>
                         </div>

@@ -55,6 +55,7 @@ namespace KaraagacSporWebb.AdminPanel
                 if (dm.NewsUpdate(n))
                 {
                     pnl_succes.Visible = true;
+                    pnl_error.Visible = false;
                 }
             }
             if (fu_ContentImg.HasFile)

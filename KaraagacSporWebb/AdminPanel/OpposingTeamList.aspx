@@ -13,7 +13,7 @@
                      <td>ID</td>
                      <td>Karşı Takım Adı</td>
                      <td class="text-center">Logo</td>
-                     <td colspan="2" class="text-center">Seçenekler</td>
+                     <td class="text-center">Seçenekler</td>
                  </tr>
                  <tbody>
                      <asp:PlaceHolder ID="ItemPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -26,8 +26,6 @@
                  <td><%# Eval("Name") %></td>
                  <td style="text-align: center;">
                      <img src="Assets/Img/<%# Eval("Logo") %>" width="50" />
-                 </td>
-                 <td>
                  </td>
                  <td class="text-center">
                      <asp:LinkButton ID="lbtn_dlt" runat="server" CssClass="btn btn-danger mt-4" CommandArgument='<%# Eval("ID") %>' CommandName="dlt">Sil</asp:LinkButton>

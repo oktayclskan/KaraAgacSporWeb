@@ -30,7 +30,9 @@
 
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="NewsList.aspx">Haberler &nbsp  <i class="fa-solid fa-newspaper text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="AboutUsList.aspx">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end side-icon-color"></i></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="OpposingTeamList.aspx">Karşı Takım Ayarları&nbsp <i class="fa-solid fa-tty text-primary float-end side-icon-color"></i></a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="OpposingTeamList.aspx">Karşı Takım Ayarları&nbsp<i class="fa-solid fa-people-group text-primary float-end side-icon-color"></i> </a>
+                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="NextMatchList.aspx">Gelecek Maçı Ayarları&nbsp<i class="fa-solid fa-angles-right text-primary float-end side-icon-color"></i> </a>
+                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="FixtureList.aspx">Fixture&nbsp<i class="fa-solid fa-list-ol text-primary float-end side-icon-color"></i> </a>
                         </div>
                         <div>
                              <asp:Label ID="lb_loginName" runat="server"></asp:Label>

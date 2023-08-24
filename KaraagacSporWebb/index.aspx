@@ -89,10 +89,6 @@
         </div>
       </div>
     </div>--%>
-
-
-
-     
     </div>
     <%--<div class="latest-news">
         <div class="container">
@@ -195,7 +191,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="text-center widget-vs-contents mb-4">
                             <h4>World Cup League</h4>
                             <p class="mb-5">
@@ -210,6 +205,8 @@
                 </div>
                 <div class="col-lg-6">
 
+
+
                     <div class="widget-next-match">
                         <table class="table custom-table">
                             <thead>
@@ -222,79 +219,31 @@
                                     <th>PTS</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><strong class="text-white">Football League</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><strong class="text-white">Soccer</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td><strong class="text-white">Juvendo</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td><strong class="text-white">French Football League</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td><strong class="text-white">Legia Abante</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td><strong class="text-white">Gliwice League</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td><strong class="text-white">Cornika</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td><strong class="text-white">Gravity Smash</strong></td>
-                                    <td>22</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                    <td>140</td>
-                                </tr>
+                                <asp:Repeater ID="rp_fixture" runat="server">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td><%# Container.ItemIndex + 1 %></td>
+                                            <td><strong class="text-white"><%#Eval("OpposingTeamName") %></strong></td>
+                                            <td><%# Eval("Win") %></td>
+                                            <td><%# Eval("Draw") %></td>
+                                            <td><%# Eval("Lose") %></td>
+                                            <td><%# Eval("Point") %></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </tbody>
+
                         </table>
                     </div>
+
+
 
                 </div>
             </div>
         </div>
     </div>
-   
+
 
 </asp:Content>

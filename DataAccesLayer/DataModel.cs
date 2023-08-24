@@ -119,13 +119,13 @@ namespace DataAccesLayer
                 while (reader.Read())
                 {
                     Matches m = new Matches();
-                    m.ID = reader.GetInt32(0); 
+                    m.ID = reader.GetInt32(0);
                     m.StadiumName = reader.GetString(1);
                     m.OpposingTeamName = reader.GetString(2);
-                    m.OppesingTeamLogo=reader.GetString(3);
+                    m.OppesingTeamLogo = reader.GetString(3);
                     m.MyTeamScore = reader.GetInt32(4);
-                    m.OpposingTeamScore=reader.GetInt32(5);
-                    m.StadiumOwner=reader.GetBoolean(6);
+                    m.OpposingTeamScore = reader.GetInt32(5);
+                    m.StadiumOwner = reader.GetBoolean(6);
                     m.StadiumOwnerStr = reader.GetBoolean(6) ? "<label style='color:green'>Ev Sahini</label>" : "<label style='color:red'>Deplasman</label>";
                     m.MatchDateTime = reader.GetDateTime(7);
 
@@ -483,7 +483,7 @@ namespace DataAccesLayer
         }
         #endregion
 
-            #region MatchDetail
+        #region MatchDetail
         //public List<MatchDetail> MatchDetailsList()
         //{
         //    List<MatchDetail>matchDetails = new List<MatchDetail>();
@@ -517,7 +517,7 @@ namespace DataAccesLayer
                     MatchDetail md = new MatchDetail();
                     md.ID = reader.GetInt32(0);
                     md.CardName = reader.GetString(1);
-                    md.PlayerName=reader.GetString(2);
+                    md.PlayerName = reader.GetString(2);
                     md.MyTeamGoal = reader.GetBoolean(3);
                     md.MyTeamGoalStr = reader.GetBoolean(3) ? "<label style='color:green'>1 Gol</label>" : "<label style='color:red'>--</label>";
                     md.MyTeamTime = reader.GetString(4);
@@ -570,19 +570,19 @@ namespace DataAccesLayer
             {
                 cmd.CommandText = "Select ID,Name,Logo From OpposingTeam Where ID=@id";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id",id);
+                cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 OpposingTeam ot = new OpposingTeam();
                 while (reader.Read())
                 {
-                    ot.ID=reader.GetInt32(0);
-                    ot.Name=reader.GetString(1);
-                    ot.logo=reader.GetString(2);
+                    ot.ID = reader.GetInt32(0);
+                    ot.Name = reader.GetString(1);
+                    ot.logo = reader.GetString(2);
                 }
                 return ot;
             }
-            catch 
+            catch
             {
                 return null;
             }
@@ -604,6 +604,27 @@ namespace DataAccesLayer
                 return false;
             }
             finally { con.Close(); }
+        }
+        public bool OpposingTeamAdd(OpposingTeam ot)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO OpposingTeam (Name,Logo) VALUES (@name,@logo)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@name", ot.Name);
+                cmd.Parameters.AddWithValue("@logo", ot.logo);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         #endregion
 
@@ -637,7 +658,7 @@ namespace DataAccesLayer
                 con.Close();
             }
         }
-        
+
         #endregion
 
         #region AboutAs
@@ -685,7 +706,7 @@ namespace DataAccesLayer
                     au.ID = reader.GetInt32(0);
                     au.Title = reader.GetString(1);
                     au.Content = reader.GetString(2);
-                ;
+                    ;
                 }
                 return au;
             }
@@ -721,7 +742,7 @@ namespace DataAccesLayer
                 cmd.Parameters.AddWithValue("@id", a.ID);
                 cmd.Parameters.AddWithValue("@title", a.Title);
                 cmd.Parameters.AddWithValue("@content", a.Content);
-    
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -740,7 +761,7 @@ namespace DataAccesLayer
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@title", a.Title);
                 cmd.Parameters.AddWithValue("@content", a.Content);
-           
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -784,8 +805,35 @@ namespace DataAccesLayer
         }
         #endregion
         #region Fixture
-
-        public bool FixtureCreate(PointFixture pf)
+        public List<PointFixture> PointFixtureList()
+        {
+            List<PointFixture> PointFixtures = new List<PointFixture>();
+            try
+            {
+                cmd.CommandText = "SELECT pt.ID, ot.Name, pt.Win, pt.Draw, pt.Lose, pt.Point\r\nFROM PointFixture AS pt\r\nJOIN OpposingTeam AS ot ON pt.OpposingTeamID = ot.ID\r\nORDER BY pt.Point DESC";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    PointFixture c = new PointFixture();
+                    c.ID = reader.GetInt32(0);
+                    c.OpposingTeamName = reader.GetString(1);
+                    c.Win = reader.GetInt32(2);
+                    c.Draw = reader.GetInt32(3);
+                    c.Lose = reader.GetInt32(4);
+                    c.Point = reader.GetInt32(5);
+                    PointFixtures.Add(c);
+                }
+                return PointFixtures;
+            }
+            catch
+            {
+                return null;
+            }
+            finally { con.Close(); }
+        }
+        public bool FixtureAdd(PointFixture pf)
         {
             try
             {
@@ -832,7 +880,7 @@ namespace DataAccesLayer
             try
             {
                 PointFixture pf = new PointFixture();
-                cmd.CommandText = "SELECT ID, OpposingTeamID, Win, Draw, Lose, Point FROM PointFixture WHERE ID = @id";
+                cmd.CommandText = "Select ID,OpposingTeamID,Win,Draw,Lose,Point From PointFixture  WHERE ID = @id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
@@ -854,10 +902,50 @@ namespace DataAccesLayer
             }
             finally { con.Close(); }
         }
-
+        public bool FixtureDlt(int id)
+        {
+            try
+            {
+                cmd.CommandText = "Delete PointFixture Where ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
         #endregion
-        #region Next Matcg
-        public bool NextMatchCreate(NextMatch nm)
+        #region Next Match
+
+        public List<NextMatch> NextMatchList()
+        {
+            List<NextMatch> nextMatche = new List<NextMatch>();
+            try
+            {
+                cmd.CommandText = "Select nm.ID, ot.Name,s.Name,nm.Date\r\nFrom NextMatch AS nm\r\njoin OpposingTeam AS ot ON nm.OpposingTeamID=ot.ID\r\njoin Stadiums AS s ON nm.StadiumID=s.ID";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    NextMatch nm = new NextMatch();
+                    nm.ID = reader.GetInt32(0);
+                    nm.OpposingTeamName = reader.GetString(1);
+                    nm.StadiumName = reader.GetString(2);
+                    nm.Date = reader.GetDateTime(3);
+                    nextMatche.Add(nm);
+                }
+                return nextMatche;
+            }
+            catch { return null; }
+            finally { con.Close(); }
+        }
+        public bool NextMatchAdd(NextMatch nm)
         {
             try
             {
@@ -866,6 +954,24 @@ namespace DataAccesLayer
                 cmd.Parameters.AddWithValue("@opposing", nm.OpposingTeamID);
                 cmd.Parameters.AddWithValue("@stadium", nm.StadiumID);
                 cmd.Parameters.AddWithValue("@date", nm.Date);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+        public bool NextMatchDlt(int id)
+        {
+            try
+            {
+                cmd.CommandText = "Delete NextMatch Where ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
             }

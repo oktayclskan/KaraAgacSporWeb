@@ -2160,6 +2160,7 @@
     <Content Include="AdminPanel\Assets\Img\profil.png" />
     <Content Include="AdminPanel\Assets\js\scripts.js" />
     <Content Include="AdminPanel\Default.aspx" />
+    <Content Include="AdminPanel\FixtureList.aspx" />
     <Content Include="AdminPanel\HomePage.aspx" />
     <Content Include="AdminPanel\MatchAdd.aspx" />
     <Content Include="AdminPanel\MatchDetailList.aspx" />
@@ -2168,10 +2169,15 @@
     <Content Include="AdminPanel\NewsAdd.aspx" />
     <Content Include="AdminPanel\NewsList.aspx" />
     <Content Include="AdminPanel\NewsUpdate.aspx" />
+    <Content Include="AdminPanel\NextMatchAdd.aspx" />
+    <Content Include="AdminPanel\NextMatchList.aspx" />
+    <Content Include="AdminPanel\OpposingTeamAdd.aspx" />
     <Content Include="AdminPanel\OpposingTeamList.aspx" />
     <Content Include="AdminPanel\PlayerAdd.aspx" />
     <Content Include="AdminPanel\PlayerList.aspx" />
     <Content Include="AdminPanel\PlayerUpdate.aspx" />
+    <Content Include="AdminPanel\PointFixtureAdd.aspx" />
+    <Content Include="AdminPanel\PointFixtureUpdate.aspx" />
     <Content Include="Assets\css\aos.css" />
     <Content Include="Assets\css\bootstrap-datepicker.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
@@ -2289,6 +2295,13 @@
     <Compile Include="AdminPanel\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\FixtureList.aspx.cs">
+      <DependentUpon>FixtureList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\FixtureList.aspx.designer.cs">
+      <DependentUpon>FixtureList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2352,6 +2365,27 @@
     <Compile Include="AdminPanel\NewsUpdate.aspx.designer.cs">
       <DependentUpon>NewsUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\NextMatchAdd.aspx.cs">
+      <DependentUpon>NextMatchAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\NextMatchAdd.aspx.designer.cs">
+      <DependentUpon>NextMatchAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\NextMatchList.aspx.cs">
+      <DependentUpon>NextMatchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\NextMatchList.aspx.designer.cs">
+      <DependentUpon>NextMatchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\OpposingTeamAdd.aspx.cs">
+      <DependentUpon>OpposingTeamAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\OpposingTeamAdd.aspx.designer.cs">
+      <DependentUpon>OpposingTeamAdd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\OpposingTeamList.aspx.cs">
       <DependentUpon>OpposingTeamList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2379,6 +2413,20 @@
     </Compile>
     <Compile Include="AdminPanel\PlayerUpdate.aspx.designer.cs">
       <DependentUpon>PlayerUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\PointFixtureAdd.aspx.cs">
+      <DependentUpon>PointFixtureAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\PointFixtureAdd.aspx.designer.cs">
+      <DependentUpon>PointFixtureAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\PointFixtureUpdate.aspx.cs">
+      <DependentUpon>PointFixtureUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\PointFixtureUpdate.aspx.designer.cs">
+      <DependentUpon>PointFixtureUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="blog.aspx.cs">
       <DependentUpon>blog.aspx</DependentUpon>

@@ -22,13 +22,13 @@
                     <div class="col">
                         <div>
                             <label>Stadyum Seç</label><br />
-                            <asp:DropDownList ID="dll_Stadium" runat="server" AppendDataBoundItems="true">
+                            <asp:DropDownList ID="dll_Stadium" runat="server" CssClass="form-control" AppendDataBoundItems="true">
                                 <asp:ListItem Text="Seçiniz" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                           <div>
                             <label>Takım Seç</label><br />
-                            <asp:DropDownList ID="dll_opposingTeam" runat="server" AppendDataBoundItems="true">
+                            <asp:DropDownList ID="dll_opposingTeam" runat="server" CssClass="form-control" AppendDataBoundItems="true">
                                 <asp:ListItem Text="Seçiniz" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
