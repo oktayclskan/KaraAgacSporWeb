@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="hero overlay" style="background-image: url('Assets/images/bg_3.jpg');">
+    <div class="hero overlay" style="background-image: url('Assets/images/football-wallpaper-.jpeg');">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 mx-auto text-center">
@@ -50,10 +50,10 @@
                 <ItemTemplate>
                     <div class="col-lg-12 mt-5">
                         <div class="d-flex team-vs mt-4">
-                            <h6 class="score mt-5" style="font-size: 10pt"><%#Eval("MatchDateTimeStr") %></h6>
+                            <h6 class="score mt-5" style="font-size: 10pt"><%#Eval("MatchDateTime") %></h6>
                             <h5 class="score" style="font-size: 10pt; margin-top: 7%">
                                 <a href="MatchseRead.aspx?mid=<%#Eval("ID") %>" class="text-white">
-                                    <label>Detaylar</label>
+                                    <%--<label>Detaylar</label>--%>
                                 </a>
                             </h5>
                             <span class="score"><%#Eval("MyTeamScore") %>-<%#Eval("OpposingTeamScore") %></span>

@@ -2202,9 +2202,14 @@
     <Content Include="Assets\fonts\icomoon\fonts\icomoon.svg" />
     <Content Include="Assets\fonts\icomoon\Read Me.txt" />
     <Content Include="Assets\fonts\icomoon\style.css" />
+    <Content Include="Assets\images\2342997-48758710-2560-1440.jpg" />
+    <Content Include="Assets\images\Appsoly.jpg" />
+    <Content Include="Assets\images\balll.jpeg" />
     <Content Include="Assets\images\bg_1.jpg" />
     <Content Include="Assets\images\bg_2.jpg" />
     <Content Include="Assets\images\bg_3.jpg" />
+    <Content Include="Assets\images\Download-Soccer.jpg" />
+    <Content Include="Assets\images\football-wallpaper-.jpeg" />
     <Content Include="Assets\images\img_1.jpg" />
     <Content Include="Assets\images\img_2.jpg" />
     <Content Include="Assets\images\img_3.jpg" />
@@ -2223,7 +2228,9 @@
     <Content Include="Assets\images\person_7.jpg" />
     <Content Include="Assets\images\SOCCER.png" />
     <Content Include="Assets\images\sports-development-logo.jpg" />
+    <Content Include="Assets\images\team-soccer-f.jpg" />
     <Content Include="Assets\images\TM.png" />
+    <Content Include="Assets\images\walpapaer.jpg" />
     <Content Include="Assets\js\aos.js" />
     <Content Include="Assets\js\bootstrap-datepicker.min.js" />
     <Content Include="Assets\js\bootstrap.min.js" />

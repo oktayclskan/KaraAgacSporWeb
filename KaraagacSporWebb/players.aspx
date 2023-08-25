@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="hero overlay" style="background-image: url('Assets/images/bg_3.jpg');">
+    <div class="hero overlay" style="background-image: url('Assets/images/team-soccer-f.jpg');">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 mx-auto text-center">

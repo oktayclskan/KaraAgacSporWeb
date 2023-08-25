@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="hero overlay" style="background-image: url('Assets/images/bg_3.jpg');">
+    <div class="hero overlay" style="background-image: url('Assets/images/walpapaer.jpg');">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 mx-auto text-center">
@@ -16,11 +16,12 @@
 
     <div class="container site-section">
         <div class="row">
+            <div class="col-12">
+                <img src="Assets/images/2342997-48758710-2560-1440.jpg" />
+            </div>
             <asp:Repeater ID="rp_aboutus" runat="server">
                 <ItemTemplate>
-                    <div class="col-12">
-                        <img src="AdminPanel/Assets/Img/<%# Eval("Img") %>" width="350" />
-                    </div>
+
                     <div class="col-md-10">
                         <h3><%# Eval("Title") %></h3>
                         <p><%# Eval("Content") %></p>
