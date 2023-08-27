@@ -75,7 +75,7 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div class="site-section">
+        <%--<div class="site-section">
             <div class="container">
                 <div class="row">
                     <div class="col-6 title-section">
@@ -175,9 +175,9 @@
                 </div>
 
             </div>
-        </div>
+        </div>--%>
 
-        <div class="container site-section">
+       <%-- <div class="container site-section">
             <div class="row">
                 <div class="col-6 title-section">
                     <h2 class="heading">Our Blog</h2>
@@ -211,5 +211,5 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
 </asp:Content>
