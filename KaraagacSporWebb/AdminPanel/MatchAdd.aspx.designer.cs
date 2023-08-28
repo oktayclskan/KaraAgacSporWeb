@@ -60,6 +60,24 @@ namespace KaraagacSporWebb.AdminPanel
         protected global::System.Web.UI.WebControls.DropDownList dll_opposingTeam;
 
         /// <summary>
+        /// tb_myTeamScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_myTeamScore;
+
+        /// <summary>
+        /// tb_opposingTeamScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_opposingTeamScore;
+
+        /// <summary>
         /// cb_StadiumOwner control.
         /// </summary>
         /// <remarks>

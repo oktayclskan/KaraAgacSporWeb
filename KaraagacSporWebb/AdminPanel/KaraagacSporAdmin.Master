@@ -24,18 +24,26 @@
                             <h3>Yönetici Paneli</h3>
                         </div>
                         <div class="list-group list-group-flush">
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="#!">Anasayfa &nbsp <i class="fa-solid fa-house text-primary float-end side-icon-color"></i></a>
+                            <div class="dropdown">
+                                <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Anasayfa&nbsp <i class="fa-solid fa-house text-primary float-end side-icon-color"></i>
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item mt-2" href="NextMatchList.aspx">Gelecek Maçı Ayarları</a></li>
+                                    <li><a class="dropdown-item mt-2" href="FixtureList.aspx">Puan Tablosunu Düzenle
+                                        </a></li>
+                                </ul>
+                            </div>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="MatchesList.aspx">Maçlar &nbsp  <i class="fa-regular fa-futbol text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="PlayerList.aspx">Oyuncular &nbsp <i class="fa-solid fa-users-between-lines text-primary float-end side-icon-color"></i></a>
 
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="NewsList.aspx">Haberler &nbsp  <i class="fa-solid fa-newspaper text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="AboutUsList.aspx">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="OpposingTeamList.aspx">Karşı Takım Ayarları&nbsp<i class="fa-solid fa-people-group text-primary float-end side-icon-color"></i> </a>
-                            <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="NextMatchList.aspx">Gelecek Maçı Ayarları&nbsp<i class="fa-solid fa-angles-right text-primary float-end side-icon-color"></i> </a>
-                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="FixtureList.aspx">Fixture&nbsp<i class="fa-solid fa-list-ol text-primary float-end side-icon-color"></i> </a>
+
                         </div>
                         <div>
-                             <asp:Label ID="lb_loginName" runat="server"></asp:Label>
+                            <asp:Label ID="lb_loginName" runat="server"></asp:Label>
                         </div>
                     </div>
                     <!-- Page content wrapper-->
@@ -45,7 +53,6 @@
                             <div class="container-fluid">
                                 <button class="btn btn-secondary pb-2" id="sidebarToggle"><i class="fa-solid fa-arrows-left-right"></i></button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                                 </div>
                             </div>
                         </nav>

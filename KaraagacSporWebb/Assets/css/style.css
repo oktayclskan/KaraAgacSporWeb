@@ -696,6 +696,19 @@ h1, h2, h3, h4, h5,
         z-index: 2;
         letter-spacing: .2em;
     }
+    .team-vs .lastmatchDate {
+        position: absolute;
+        top: 80%;
+        left: 48%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        z-index: 2;
+        letter-spacing: .2em;
+    }
     @media (max-width: 991.98px) {
       .team-vs .score {
         font-size: 2rem;
@@ -717,18 +730,19 @@ h1, h2, h3, h4, h5,
   .team-vs .team-2 {
     position: relative; }
     .team-vs .team-2:before {
-      position: absolute;
-      background: #f6d743;
-      background: #ee1e46;
-      content: "";
-      left: -12%;
-      right: 0;
-      top: 0;
-      width: 200%;
-      height: 200%;
-      -webkit-transform: skew(-15deg);
-      -ms-transform: skew(-15deg);
-      transform: skew(-15deg); }
+        position: absolute;
+        background: #f6d743;
+        background: #7DAFD5;
+        content: "";
+        left: -12%;
+        right: 0;
+        top: 0;
+        width: 200%;
+        height: 200%;
+        -webkit-transform: skew(-15deg);
+        -ms-transform: skew(-15deg);
+        transform: skew(-15deg);
+    }
 
 .latest-news {
   padding: 100px 0; }
@@ -891,9 +905,10 @@ h1, h2, h3, h4, h5,
     font-weight: 700; }
 
 .widget-title {
-  padding: 16px 20px;
-  color: #fff;
-  background-color: #ee1e46; }
+    padding: 16px 20px;
+    color: #fff;
+    background-color: #7DAFD5;
+}
   .widget-title h3 {
     margin: 0;
     padding: 0;
@@ -922,10 +937,11 @@ h1, h2, h3, h4, h5,
 
 .custom-table {
   margin-bottom: 0; }
-  .custom-table thead tr th {
-    background: #ee1e46;
-    color: #fff;
-    border: none; }
+    .custom-table thead tr th {
+        background: #7DAFD5;
+        color: #fff;
+        border: none;
+    }
   .custom-table tbody tr td {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); }

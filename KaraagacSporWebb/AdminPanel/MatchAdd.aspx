@@ -26,21 +26,29 @@
                                 <asp:ListItem Text="Seçiniz" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <div>
+                          <div>
                             <label>Takım Seç</label><br />
                             <asp:DropDownList ID="dll_opposingTeam" runat="server" CssClass="form-control" AppendDataBoundItems="true">
                                 <asp:ListItem Text="Seçiniz" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
+                        
+                        
+                        <div>
+                            <asp:TextBox ID="tb_myTeamScore" TextMode="Number" CssClass="form-control  mt-2" runat="server" placeholder="Takım Skor"></asp:TextBox>
+                        </div>
+                        <div>
+                            <asp:TextBox ID="tb_opposingTeamScore" TextMode="Number" CssClass="form-control  mt-2" runat="server" placeholder="Karşı Takım Skor"></asp:TextBox>
+                        </div>
                         <div class="mt-2">
                             <span>Ev Sahibimiyiz</span>
                             <asp:CheckBox ID="cb_StadiumOwner" runat="server" />
                         </div>
-                        <div class="mt-2">
-                            <asp:TextBox ID="tb_MatchDateTime" TextMode="DateTime" CssClass="form-control  mt-2" runat="server" placeholder="Maç Tarihi"></asp:TextBox>
+                         <div class="mt-2">
+                            <asp:TextBox ID="tb_MatchDateTime"  CssClass="form-control  mt-2" runat="server" placeholder="Maç Tarihi"></asp:TextBox>
                         </div>
-
-
+                       
+                       
                         <div>
                             <div class="mb-3 mt-2">
                                 <asp:LinkButton ID="btn_matchAdd" runat="server" CssClass="btn btn-success d-block mt-4" OnClick="btn_matchAdd_Click">Ekle</asp:LinkButton>

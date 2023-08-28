@@ -50,10 +50,10 @@
                 <ItemTemplate>
                     <div class="col-lg-12 mt-5">
                         <div class="d-flex team-vs mt-4">
-                            <h6 class="score mt-5" style="font-size: 10pt"><%#Eval("MatchDateTime") %></h6>
+                            <h6 class="score mt-5" style="font-size: 10pt"><%#Eval("MatchDateTimeStr") %></h6>
                             <h5 class="score" style="font-size: 10pt; margin-top: 7%">
                                 <a href="MatchseRead.aspx?mid=<%#Eval("ID") %>" class="text-white">
-                                    <%--<label>Detaylar</label>--%>
+                                    <label><%# Eval("MatchDateTime") %></label>
                                 </a>
                             </h5>
                             <span class="score"><%#Eval("MyTeamScore") %>-<%#Eval("OpposingTeamScore") %></span>
@@ -75,7 +75,7 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <%--<div class="site-section">
+       <%-- <div class="site-section">
             <div class="container">
                 <div class="row">
                     <div class="col-6 title-section">
@@ -175,9 +175,9 @@
                 </div>
 
             </div>
-        </div>--%>
+        </div>
 
-       <%-- <div class="container site-section">
+        <div class="container site-section">
             <div class="row">
                 <div class="col-6 title-section">
                     <h2 class="heading">Our Blog</h2>

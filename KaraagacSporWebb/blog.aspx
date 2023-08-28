@@ -34,7 +34,7 @@
                                 <span class="meta"><%# Eval("NewsDateStr") %></span>
                                 <h3 class="mb-4"><a href="#"><%#Eval("NewsTitle") %></a></h3>
                                 <p style="height: 200px"><%#Eval("NewsDescription") %></p>
-                                <p><a href="#">Devamı</a></p>
+                               <%-- <p><a href="#">Devamı</a></p>--%>
                             </div>
                         </div>
                     </div>

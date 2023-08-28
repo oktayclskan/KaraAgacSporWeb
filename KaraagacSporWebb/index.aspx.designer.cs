@@ -15,6 +15,15 @@ namespace KaraagacSporWebb
     {
 
         /// <summary>
+        /// rp_matchDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_matchDate;
+
+        /// <summary>
         /// rp_Lastmatch control.
         /// </summary>
         /// <remarks>
@@ -24,22 +33,13 @@ namespace KaraagacSporWebb
         protected global::System.Web.UI.WebControls.Repeater rp_Lastmatch;
 
         /// <summary>
-        /// rp_news control.
+        /// rp_nextMatch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_news;
-
-        /// <summary>
-        /// rp_nextMatchGet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_nextMatchGet;
+        protected global::System.Web.UI.WebControls.Repeater rp_nextMatch;
 
         /// <summary>
         /// rp_fixture control.
@@ -49,5 +49,14 @@ namespace KaraagacSporWebb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rp_fixture;
+
+        /// <summary>
+        /// rp_news control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rp_news;
     }
 }

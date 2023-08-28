@@ -33,30 +33,52 @@ namespace KaraagacSporWebb.AdminPanel
         {
             if (!string.IsNullOrEmpty(dll_Stadium.Text.Trim()))
             {
-                if (!string.IsNullOrEmpty(tb_MatchDateTime.Text.Trim()))
+
+
+                if (!string.IsNullOrEmpty(tb_myTeamScore.Text.Trim()))
                 {
-                    Matches m = new Matches();
-                    m.StadiumID = Convert.ToInt32(dll_Stadium.SelectedItem.Value);
-                    m.OpposingTeamID = Convert.ToInt32(dll_opposingTeam.SelectedItem.Value);
-                    m.StadiumOwner = cb_StadiumOwner.Checked;
-                    m.MatchDateTime = Convert.ToDateTime(tb_MatchDateTime.Text);
-                    if (dm.MatchAdd(m))
+                    if (!string.IsNullOrEmpty(tb_opposingTeamScore.Text.Trim()))
                     {
-                        tb_MatchDateTime.Text = " ";
-                        pnl_succes.Visible = true;
-                        pnl_error.Visible = false;
+                        if (!string.IsNullOrEmpty(tb_MatchDateTime.Text.Trim()))
+                        {
+                            Matches m = new Matches();
+                            m.StadiumID = Convert.ToInt32(dll_Stadium.SelectedItem.Value);
+                            m.OpposingTeamID = Convert.ToInt32(dll_opposingTeam.SelectedItem.Value);
+                            m.MyTeamScore = Convert.ToInt32(tb_myTeamScore.Text);
+                            m.OpposingTeamScore = Convert.ToInt32(tb_opposingTeamScore.Text);
+                            m.StadiumOwner = cb_StadiumOwner.Checked;
+                            m.MatchDateTimeStr = tb_MatchDateTime.Text;
+                            if (dm.MatchAdd(m))
+                            {
+                                tb_myTeamScore.Text = " ";
+                                tb_opposingTeamScore.Text = " ";
+                                tb_MatchDateTime.Text = " ";
+                                pnl_succes.Visible = true;
+                                pnl_error.Visible = false;
+                            }
+                            else
+                            {
+                                pnl_error.Visible = true;
+                                lbl_eror.Text = "Eklenirken Bir Hata Oluştu";
+                            }
+
+                        }
+                        else
+                        {
+                            pnl_error.Visible = true;
+                            lbl_eror.Text = "Lütfen Maç Tarihi ekleyiniz";
+                        }
                     }
                     else
                     {
                         pnl_error.Visible = true;
-                        lbl_eror.Text = "Eklenirken Bir Hata Oluştu";
+                        lbl_eror.Text = "Lütfen Karşı Takım Skor ekleyiniz";
                     }
-
                 }
                 else
                 {
                     pnl_error.Visible = true;
-                    lbl_eror.Text = "Lütfen Maç Tarihi ekleyiniz";
+                    lbl_eror.Text = "Lütfen Takım Skor ekleyiniz";
                 }
             }
         }

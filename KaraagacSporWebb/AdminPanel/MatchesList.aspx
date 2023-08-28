@@ -46,9 +46,7 @@
                     <td class="text-center"><%# Eval("MyTeamScore") %></td>
                     <td class="text-center"><%# Eval("OpposingTeamScore") %></td>
 
-                    <td>
-                        <a href="MatchUpdate.aspx?mid=<%# Eval("ID") %>" class="btn btn-success mt-3">Düzenle</a>
-                    </td>
+                    
                     <td>
                         <asp:LinkButton ID="lbtn_dlt" runat="server" CssClass="btn btn-danger mt-3" CommandArgument='<%# Eval("ID") %>' CommandName="dlt">Sil</asp:LinkButton>
                     </td>

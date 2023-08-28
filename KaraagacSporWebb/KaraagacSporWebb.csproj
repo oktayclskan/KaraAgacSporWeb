@@ -2153,10 +2153,11 @@
     <Content Include="AdminPanel\Assets\fontawesome-free-6.3.0-web\svgs\solid\yen-sign.svg" />
     <Content Include="AdminPanel\Assets\fontawesome-free-6.3.0-web\svgs\solid\yin-yang.svg" />
     <Content Include="AdminPanel\Assets\fontawesome-free-6.3.0-web\svgs\solid\z.svg" />
+    <Content Include="AdminPanel\Assets\Img\0fde2f8d-19cc-47dc-9092-c5a5949adfde.png" />
     <Content Include="AdminPanel\Assets\Img\aboutimg1.png" />
     <Content Include="AdminPanel\Assets\Img\aboutimg2.png" />
     <Content Include="AdminPanel\Assets\Img\aboutus3.png" />
-    <Content Include="AdminPanel\Assets\Img\ENES3121.jpg" />
+    <Content Include="AdminPanel\Assets\Img\profil.png" />
     <Content Include="AdminPanel\Assets\js\scripts.js" />
     <Content Include="AdminPanel\Default.aspx" />
     <Content Include="AdminPanel\FixtureList.aspx" />
@@ -2172,6 +2173,7 @@
     <Content Include="AdminPanel\NextMatchList.aspx" />
     <Content Include="AdminPanel\OpposingTeamAdd.aspx" />
     <Content Include="AdminPanel\OpposingTeamList.aspx" />
+    <Content Include="AdminPanel\OpposingTeamUpdate.aspx" />
     <Content Include="AdminPanel\PlayerAdd.aspx" />
     <Content Include="AdminPanel\PlayerList.aspx" />
     <Content Include="AdminPanel\PlayerUpdate.aspx" />
@@ -2398,6 +2400,13 @@
     </Compile>
     <Compile Include="AdminPanel\OpposingTeamList.aspx.designer.cs">
       <DependentUpon>OpposingTeamList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\OpposingTeamUpdate.aspx.cs">
+      <DependentUpon>OpposingTeamUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\OpposingTeamUpdate.aspx.designer.cs">
+      <DependentUpon>OpposingTeamUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\PlayerAdd.aspx.cs">
       <DependentUpon>PlayerAdd.aspx</DependentUpon>

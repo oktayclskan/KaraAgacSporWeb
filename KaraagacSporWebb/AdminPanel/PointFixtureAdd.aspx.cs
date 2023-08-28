@@ -42,6 +42,10 @@ namespace KaraagacSporWebb.AdminPanel
                                 pt.Point = Convert.ToInt32(tb_Poing.Text);
                                 if (dm.FixtureAdd(pt))
                                 {
+                                    tb_win.Text = " ";
+                                    tb_Draw.Text = " ";
+                                    tb_Lose.Text = " ";
+                                    tb_Poing.Text = " ";
                                     pnl_succes.Visible = true;
                                     pnl_error.Visible = false;
                                 }

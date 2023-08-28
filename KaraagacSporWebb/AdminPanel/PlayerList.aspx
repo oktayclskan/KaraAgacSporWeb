@@ -35,10 +35,10 @@
                     <td class="text-center"><%# Eval("PlayerDateOfBirthStr") %></td>
                     <td class="text-center"><%# Eval("PlayerUniformNumber") %></td>
                     <td class="text-center"><%# Eval("PlayerPosition") %></td>
-                    <td class="text-center"><%# Eval("PlayerStatusPlayer") %></td>
+                    <td class="text-center"><%# Eval("PlayerFirstElevenStr") %></td>
                     <td class="text-center"><%# Eval("PlayerStatusPlayerStr") %></td>
                     <td>
-                        <img src="Assets/Img/<%# Eval("PlayerImg") %>" width="100" />
+                        <img src="Assets/Img/<%# Eval("PlayerImg") %>" width="70" />
                     </td>
                     <td>
                         <a href="PlayerUpdate.aspx?pid=<%# Eval("ID") %>" class="btn btn-success mt-2">Düzenle</a>
