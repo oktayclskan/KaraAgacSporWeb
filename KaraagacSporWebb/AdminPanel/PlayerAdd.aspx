@@ -25,20 +25,11 @@
                             <asp:TextBox ID="tb_surname" CssClass="form-control  mt-2" runat="server" placeholder="Soyisim"></asp:TextBox>
                         </div>
                         <div>
-                            <section class="container">
-                                <h2 class="py-2">Datepicker in Bootstrap 5</h2>
-                                <label for="date" class="col-1 col-form-label">Date</label>
-                                <div class="col-5">
+                                <div class="col-2 mt-2">
                                     <div class="input-group date">
-                                        <asp:TextBox ID="tb_dateOfBirth" runat="server"></asp:TextBox>
-                                        <span class="input-group-append">
-                                            <span class="input-group-text bg-light d-block">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
-                                        </span>
+                                        <asp:TextBox ID="tb_dateOfBirth" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                            </section>
                         </div>
                         <div>
                             <asp:TextBox ID="tb_uniformNumber" TextMode="Number" CssClass="form-control mt-2" runat="server" placeholder="Forma Numarası"></asp:TextBox>

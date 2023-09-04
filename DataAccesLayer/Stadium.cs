@@ -12,5 +12,6 @@ namespace DataAccesLayer
         public string StadiumName { get; set; }
         public string StadiumCity { get; set; }
         public string StadiumDistrict { get; set; }
+        public bool Status { get; set; }
     }
 }

@@ -44,8 +44,8 @@
                             <span>Ev Sahibimiyiz</span>
                             <asp:CheckBox ID="cb_StadiumOwner" runat="server" />
                         </div>
-                         <div class="mt-2">
-                            <asp:TextBox ID="tb_MatchDateTime"  CssClass="form-control  mt-2" runat="server" placeholder="Maç Tarihi"></asp:TextBox>
+                         <div class="mt-2 col-3">
+                            <asp:TextBox ID="tb_MatchDateTime"  CssClass="form-control  mt-2" TextMode="Date" runat="server" placeholder="Maç Tarihi"></asp:TextBox>
                         </div>
                        
                        

@@ -2179,6 +2179,8 @@
     <Content Include="AdminPanel\PlayerUpdate.aspx" />
     <Content Include="AdminPanel\PointFixtureAdd.aspx" />
     <Content Include="AdminPanel\PointFixtureUpdate.aspx" />
+    <Content Include="AdminPanel\StadiumAdd.aspx" />
+    <Content Include="AdminPanel\StadiumList.aspx" />
     <Content Include="Assets\css\aos.css" />
     <Content Include="Assets\css\bootstrap-datepicker.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
@@ -2442,6 +2444,20 @@
     </Compile>
     <Compile Include="AdminPanel\PointFixtureUpdate.aspx.designer.cs">
       <DependentUpon>PointFixtureUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\StadiumAdd.aspx.cs">
+      <DependentUpon>StadiumAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\StadiumAdd.aspx.designer.cs">
+      <DependentUpon>StadiumAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\StadiumList.aspx.cs">
+      <DependentUpon>StadiumList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\StadiumList.aspx.designer.cs">
+      <DependentUpon>StadiumList.aspx</DependentUpon>
     </Compile>
     <Compile Include="blog.aspx.cs">
       <DependentUpon>blog.aspx</DependentUpon>

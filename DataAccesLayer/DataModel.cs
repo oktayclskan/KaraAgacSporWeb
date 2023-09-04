@@ -676,9 +676,9 @@ namespace DataAccesLayer
             List<Stadium> stadiums = new List<Stadium>();
             try
             {
-                cmd.CommandText = ("Select * From Stadiums");
-                cmd.Parameters.Clear();
                 con.Open();
+                cmd.CommandText = "Select * From Stadiums";
+                cmd.Parameters.Clear();
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -689,6 +689,7 @@ namespace DataAccesLayer
                     st.StadiumDistrict = reader.GetString(3);
                     stadiums.Add(st);
                 }
+                reader.Close(); // Okuyucuyu kapat
                 return stadiums;
             }
             catch
@@ -701,6 +702,40 @@ namespace DataAccesLayer
             }
         }
 
+        public bool StadyumSoftDlt(int id)
+        {
+            try
+            {
+                cmd.CommandText = "Update Stadiums Set Status=0 WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally { con.Close(); }
+        }
+
+        public bool StadiumAdd(Stadium s)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Stadiums (Name,City,District) VALUES (@name,@city,@district)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@name",s.StadiumName);
+                cmd.Parameters.AddWithValue("@city", s.StadiumCity);
+                cmd.Parameters.AddWithValue("@district", s.StadiumDistrict);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch { return false; }
+            finally { con.Close(); }
+        }
         #endregion
 
         #region AboutAs

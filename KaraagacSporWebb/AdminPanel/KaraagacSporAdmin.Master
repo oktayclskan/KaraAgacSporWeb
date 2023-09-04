@@ -39,6 +39,7 @@
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="NewsList.aspx">Haberler &nbsp  <i class="fa-solid fa-newspaper text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="AboutUsList.aspx">Hakkımızda &nbsp <i class="fa-solid fa-pen-to-square text-primary float-end side-icon-color"></i></a>
                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="OpposingTeamList.aspx">Karşı Takım Ayarları&nbsp<i class="fa-solid fa-people-group text-primary float-end side-icon-color"></i> </a>
+                             <a class="list-group-item list-group-item-action list-group-item-light p-3 text-dark" href="StadiumList.aspx">Stadyum Ayarları&nbsp <i class="fa-solid fa-hotel text-primary float-end side-icon-color"></i></a>
 
                         </div>
                         <div>
