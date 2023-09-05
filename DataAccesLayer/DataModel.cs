@@ -677,7 +677,7 @@ namespace DataAccesLayer
             try
             {
                 con.Open();
-                cmd.CommandText = "Select * From Stadiums";
+                cmd.CommandText = "Select * From Stadiums WHERE Status = 1";
                 cmd.Parameters.Clear();
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -724,9 +724,9 @@ namespace DataAccesLayer
         {
             try
             {
-                cmd.CommandText = "INSERT INTO Stadiums (Name,City,District) VALUES (@name,@city,@district)";
+                cmd.CommandText = "INSERT INTO Stadiums (Name,City,District,Status) VALUES (@name,@city,@district,1)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@name",s.StadiumName);
+                cmd.Parameters.AddWithValue("@name", s.StadiumName);
                 cmd.Parameters.AddWithValue("@city", s.StadiumCity);
                 cmd.Parameters.AddWithValue("@district", s.StadiumDistrict);
                 con.Open();
