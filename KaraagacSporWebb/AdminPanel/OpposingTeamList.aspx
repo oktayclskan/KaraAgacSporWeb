@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Karşı Takım
         </h1>
-        <a href="OpposingTeamAdd.aspx" class="btn btn-lg bg-warning mt-2">Karşı Takım Ekle</a>
+        <a href="OpposingTeamAdd.aspx" class="btn btn-lg bg-info mt-2">Karşı Takım Ekle</a>
         <asp:ListView ID="lv_OpposingTeam" runat="server" OnItemCommand="lv_OpposingTeam_ItemCommand">
             <LayoutTemplate>
                 <table class="table table-striped mt-5">

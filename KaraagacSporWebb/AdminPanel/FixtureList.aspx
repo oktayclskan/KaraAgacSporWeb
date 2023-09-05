@@ -5,7 +5,7 @@
         <div class="container">
     <h1>Puan Tablosu
     </h1>
-    <a href="PointFixtureAdd.aspx" class="btn btn-lg bg-warning mt-2">Puan Tablosuna Veri Ekle</a>
+    <a href="PointFixtureAdd.aspx" class="btn btn-lg bg-info mt-2">Puan Tablosuna Veri Ekle</a>
     <asp:ListView ID="lv_pointFixture" runat="server" OnItemCommand="lv_pointFixture_ItemCommand" >
         <LayoutTemplate>
             <table class="table table-striped mt-5">

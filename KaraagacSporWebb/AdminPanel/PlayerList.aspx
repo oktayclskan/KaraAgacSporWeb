@@ -6,7 +6,7 @@
  <div class="container">
         <h1>Oyuncular
         </h1>
-        <a href="PlayerAdd.aspx" class="btn btn-lg bg-warning mt-2">Oyuncu Ekle</a>
+        <a href="PlayerAdd.aspx" class="btn btn-lg bg-info mt-2">Oyuncu Ekle</a>
         <asp:ListView ID="lv_Players" runat="server" OnItemCommand="lv_Players_ItemCommand">
             <LayoutTemplate>
                 <table class="table table-striped mt-5">

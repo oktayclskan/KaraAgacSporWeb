@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Stadyum Ayarları
         </h1>
-        <a href="StadiumAdd.aspx" class="btn btn-lg bg-warning mt-2">Stadyum Ekle</a>
+        <a href="StadiumAdd.aspx" class="btn btn-lg bg-info mt-2">Stadyum Ekle</a>
 
         <asp:ListView ID="lv_stadiumList" runat="server" OnItemCommand="lv_stadiumList_ItemCommand">
             <LayoutTemplate>

@@ -22,7 +22,7 @@ namespace DataAccesLayer
         {
             try
             {
-                cmd.CommandText = "SELECT Count(*) From Admins Where Mail=@mail AND AdminPassword=@adminPaswword ";
+                cmd.CommandText = "SELECT Count(*) From Admins Where Mail = @mail AND AdminPassword = @adminPaswword ";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@mail", mail);
                 cmd.Parameters.AddWithValue("@adminPaswword", adminPaswword);
@@ -33,7 +33,7 @@ namespace DataAccesLayer
                     cmd.CommandText = "SELECT * From Admins WHERE Mail=@mail AND AdminPassword=@adminPassword";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@mail", mail);
-                    cmd.Parameters.AddWithValue("@adminPaswword", adminPaswword);
+                    cmd.Parameters.AddWithValue("@adminPassword", adminPaswword);
                     SqlDataReader reader = cmd.ExecuteReader();
                     Admin a = new Admin();
 

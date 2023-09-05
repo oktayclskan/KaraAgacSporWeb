@@ -5,7 +5,7 @@
     <div class="container">
         <h1>Haberler
         </h1>
-        <a href="NewsAdd.aspx" class="btn btn-lg bg-warning mt-2">Haber Ekle Ekle</a>
+        <a href="NewsAdd.aspx" class="btn btn-lg bg-info mt-2">Haber Ekle</a>
         <asp:ListView ID="lv_News" runat="server" OnItemCommand="lv_News_ItemCommand">
             <LayoutTemplate>
                 <table class="table table-striped mt-5">

@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Maçlar 
         </h1>
-        <a href="MatchAdd.aspx" class="btn btn-lg bg-warning mt-2">Maç Ekle</a>
+        <a href="MatchAdd.aspx" class="btn btn-lg bg-info mt-2">Maç Ekle</a>
         <asp:ListView ID="lv_Matches" runat="server" OnItemCommand="lv_Matches_ItemCommand">
             <LayoutTemplate>
                 <table class="table table-striped mt-5">

@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Hakkımızda
         </h1>
-        <a href="AboutUsAdd.aspx" class="btn btn-lg bg-warning mt-2">Bilgi Ekle</a>
+        <a href="AboutUsAdd.aspx" class="btn btn-lg bg-info mt-2">Bilgi Ekle</a>
         <asp:ListView ID="lv_AboutUs" runat="server" OnItemCommand="lv_AboutUs_ItemCommand">
             <LayoutTemplate>
                 <table class="table table-striped mt-5">

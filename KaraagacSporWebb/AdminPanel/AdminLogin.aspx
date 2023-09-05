@@ -24,16 +24,15 @@
                         </div>
                     </asp:Panel>
                     <div class="input-group mb-3 mt-2">
-                         <asp:TextBox ID="tb_mail" runat="server" CssClass="form-control" Text="E-mail"></asp:TextBox>
+                         <asp:TextBox ID="tb_mail" runat="server" CssClass="form-control" Placeholder="E-mail"></asp:TextBox>
                     </div>
                     <div class="form-group mt-3">
-                        <asp:TextBox ID="tb_password" runat="server" CssClass="form-control" Text="Şifre"></asp:TextBox>
+                        <asp:TextBox ID="tb_password" runat="server" CssClass="form-control" Placeholder="Şifre" textmode="Password"></asp:TextBox>
                     </div>
                     <div class="form-group mt-3">
                         <asp:LinkButton ID="lbtn_Login" runat="server" CssClass="btn btn-success d-block mt-2" OnClick="lbtn_Login_Click">Giriş Yap</asp:LinkButton>
                     </div>
                 </div>
-
             </div>
         </div>
         <script src="Assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>

@@ -7,7 +7,7 @@
     <div class="container">
         <h1>Yapılıcak Maç
         </h1>
-        <a href="NextMatchAdd.aspx" class="btn btn-lg bg-warning mt-2">Gelecek Maçı Ekle</a>
+        <a href="NextMatchAdd.aspx" class="btn btn-lg bg-info mt-2">Gelecek Maçı Ekle</a>
         <asp:ListView ID="lv_NextMatch" runat="server" OnItemCommand="lv_NextMatch_ItemCommand">
             <LayoutTemplate>
                 <table class="table table-striped mt-5">
