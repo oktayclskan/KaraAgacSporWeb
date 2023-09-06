@@ -5,6 +5,22 @@
 <html>
 <head runat="server">
     <title>Karaağaç Spor Klübü</title>
+     <%--Google SEO--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Gömeç Karaağaç Spor">
+    <meta name="description" content="Gömeç Karaağaç Spor">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <link rel="canonical" href="https://karaagacspor.com.tr/" />
+    <link rel="next" href="https://karaagacspor.com.tr/" />
+    <meta name="generator" content="All in One SEO (AIOSEO) 4.3.9" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Karaağaç Spor +90 (544) 289 00 10" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Karaağaç Spor" />
+    <meta property="og:description" content="Gömeç'in Karaağaç beldesinde kurulan spor kulübümüz ileriyi hedeflemektedir" />
+    <meta property="og:url" content="https://karaagacspor.com.tr/" />
+    <%--Google SEO END--%>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 

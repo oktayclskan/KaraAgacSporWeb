@@ -24,7 +24,7 @@
                             <strong class="text-white d-block">ADRES</strong>
                             273 XXXXXXXw Cd.
                             <br>
-                            Eskişehir, No 10011
+                            GÖMEÇ, No 10011
                         </li>
                         <li class="mb-2">
                             <strong class="text-white d-block">E-POSTA</strong>
